@@ -1,0 +1,11 @@
+framework module Zscaler {
+  umbrella header "Zscaler.h"
+  export *
+
+  module * { export * }
+}
+
+module Zscaler.Swift {
+  header "Zscaler-Swift.h"
+  requires objc
+}
