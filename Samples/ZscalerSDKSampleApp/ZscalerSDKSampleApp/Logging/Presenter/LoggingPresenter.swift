@@ -2,11 +2,13 @@ import Foundation
 import Zscaler
 
 public final class LoggingPresenter: LoggingPresenting {
+    typealias ViewType = LoggingViewable & LoadingViewable
+
     private var loggingService: LoggingService?
-    private weak var view: LoggingViewable?
+    private weak var view: ViewType?
 
     init(loggingService: LoggingService? = nil,
-         view: LoggingViewable? = nil) {
+         view: ViewType? = nil) {
         self.loggingService = loggingService
         self.view = view
     }
@@ -16,9 +18,9 @@ public final class LoggingPresenter: LoggingPresenting {
         loggingService?.exportLogs(destination: to, queue: .main, { [weak self] logModel in
             self?.view?.hideLoading()
             if logModel.exportURL() == nil {
-                self?.view?.showError("Log file url is empty")
+                self?.view?.exportLogsDidFail("Log file url is empty")
             } else {
-                self?.view?.exportLogs(logModel)
+                self?.view?.didExportLogs(logModel)
             }
         })
     }

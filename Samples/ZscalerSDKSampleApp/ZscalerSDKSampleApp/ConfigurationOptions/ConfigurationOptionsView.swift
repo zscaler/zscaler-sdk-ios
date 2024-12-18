@@ -16,25 +16,25 @@ public struct ConfigurationOptionsView: View {
                 Form {
                     Section {
                         ConfigurationOptionToggle("URLSessions",
-                                            "Should automatically configure URLSessions",
-                                            $viewModel.configurations.automaticallyConfigureRequests)
+                                        "Should automatically configure URLSessions",
+                                                $viewModel.configurations.automaticallyConfigureRequests)
                         ConfigurationOptionToggle("WebViews",
-                                            "Should automatically configure WebViews",
-                                            $viewModel.configurations.automaticallyConfigureWebviews)
-                        ConfigurationOptionToggle("Enable logs in console", 
-                                            "Enable and change different log levels",
-                                            $viewModel.configurations.enableDebugLogsInConsole)
+                                        "Should automatically configure WebViews",
+                                                $viewModel.configurations.automaticallyConfigureWebviews)
+                        ConfigurationOptionToggle("Enable logs in console",
+                                        "Enable and change different log levels",
+                                                $viewModel.configurations.enableDebugLogsInConsole)
                         ConfigurationOptionPicker("Log Level",
-                                                  $viewModel.configurations.logLevel)
+                                                $viewModel.configurations.logLevel)
                         ConfigurationOptionToggle("Proxy Authentication",
-                                            "Use proxy authentication",
-                                            $viewModel.configurations.useProxyAuthentication)
+                                        "Use proxy authentication",
+                                                $viewModel.configurations.useProxyAuthentication)
                         ConfigurationOptionToggle("Block JB Traffic",
-                                            "Block traffic if device is Jail Broken",
-                                            $viewModel.configurations.failIfDeviceCompromised)
-                        ConfigurationOptionToggle("Block ZPA Connection",
-                                            "Block ZPA connection on tunnel failure",
-                                            $viewModel.configurations.blockZPAConnectionsOnTunnelFailure)
+                                        "Block traffic if device is Jail Broken",
+                                                $viewModel.configurations.failIfDeviceCompromised)
+                        ConfigurationOptionToggle("Block Connection",
+                                        "Block connection on failure",
+                                                $viewModel.configurations.blockZPAConnectionsOnTunnelFailure)
                     }
                 }
             }
@@ -46,14 +46,16 @@ public struct ConfigurationOptionsView: View {
                     }, label: {
                         Text("Done")
                     }
-                ))
+                )
+            )
         }
     }
+   
 
     @ViewBuilder
     private func ConfigurationOptionToggle(_ title: String,
-                                     _ description: String,
-                                     _ value: Binding<Bool>) -> some View {
+                                           _ description: String,
+                                           _ value: Binding<Bool>) -> some View {
         Toggle(isOn: value, label: {
             VStack(alignment: .leading) {
                 Text(title)
@@ -62,6 +64,7 @@ public struct ConfigurationOptionsView: View {
                     .font(.caption)
             }
         })
+        .accessibilityIdentifier(title + "_Toggle")
     }
 
     @ViewBuilder
@@ -72,14 +75,14 @@ public struct ConfigurationOptionsView: View {
                 Picker(title, selection: selectedItem) {
                     ForEach(LogLevel.allCases, id: \.self) { value in
                         switch value {
-                            case .debug:
-                                Text("Debug")
-                            case .error:
-                                Text("Error")
-                            case .info:
-                                Text("Info")
-                            @unknown default:
-                                Text("Debug")
+                        case .debug:
+                            Text("Debug")
+                        case .error:
+                            Text("Error")
+                        case .info:
+                            Text("Info")
+                        @unknown default:
+                            Text("Debug")
                         }
                     }
                 }

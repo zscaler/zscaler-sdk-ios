@@ -63,6 +63,8 @@ extension Zscaler.ZscalerSDKError.ErrorCode {
   public static let dnsFailure: Zscaler.ZscalerSDKError.ErrorCode
   public static let tunnelError: Zscaler.ZscalerSDKError.ErrorCode
   public static let permissionDenied: Zscaler.ZscalerSDKError.ErrorCode
+  public static let tunnelAlreadyRunning: Zscaler.ZscalerSDKError.ErrorCode
+  public static let tunnelStartPendingInSDK: Zscaler.ZscalerSDKError.ErrorCode
 }
 extension Zscaler.ZscalerSDKError.ErrorCode {
   public static let csrSignFailure: Zscaler.ZscalerSDKError.ErrorCode
@@ -90,7 +92,7 @@ extension Zscaler.ZscalerSDKError.ErrorCode {
   public static let hmacSecretFailed: Zscaler.ZscalerSDKError.ErrorCode
   public static let hmacValidationFailed: Zscaler.ZscalerSDKError.ErrorCode
 }
-@objc @objcMembers public class ZscalerSDK : ObjectiveC.NSObject {
+@objc @_hasMissingDesignatedInitializers @objcMembers public class ZscalerSDK : ObjectiveC.NSObject {
   @objc public static func sharedInstance() -> Zscaler.ZscalerSDK
   @objc public func status() -> Swift.String
   @objc public var proxyInfo: Zscaler.ZscalerSDKProxyInfo? {
@@ -100,7 +102,6 @@ extension Zscaler.ZscalerSDKError.ErrorCode {
     @objc get
     @objc set
   }
-  @objc public init(configuration: Zscaler.ZscalerSDKConfiguration = .defaultConfiguration)
   @objc public func suspend()
   @objc public func resume()
   @objc public func setup(sessionConfiguration: Foundation.URLSessionConfiguration) -> Swift.Bool
@@ -114,7 +115,9 @@ extension Zscaler.ZscalerSDKError.ErrorCode {
   #if compiler(>=5.3) && $AsyncAwait
   @objc public func startZeroTrustTunnel(appKey: Swift.String, deviceUdid: Swift.String, accessToken: Swift.String) async throws
   #endif
-  @objc public func stopTunnel()
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc public func stopTunnel() async
+  #endif
   @objc public func resetProxyPortAndRequireSessionRecreation()
   @objc(exportLogsToDestination:) public func exportLogs(destination: Swift.String) -> Foundation.URL?
   @objc public func clearLogs()

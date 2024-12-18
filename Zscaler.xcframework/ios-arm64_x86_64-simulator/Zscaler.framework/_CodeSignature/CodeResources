@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Zscaler-Swift.h</key>
 		<data>
-		tSCi5CFnD3uw43CM81YJf5B25Xs=
+		DfzhxVrKCS6oTiGf/Wyler+f/bY=
 		</data>
 		<key>Headers/Zscaler.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LqNpP1iHIrc78Dsgjy4lJwBQUq4=
+		IPdTt4nJvgd9ew7YBZY+T9QQajw=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -22,19 +22,19 @@
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		aIHbekocp4M78QJz3n2ki+nBQzI=
+		HTs5p+wE48+PCn6E2n5IthpM5sg=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		xEBwNQnIZXiIR0/f3y8WWelTB78=
+		YRMHdbaN6dXg23kQZGXjxH5p6Gw=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		aIHbekocp4M78QJz3n2ki+nBQzI=
+		HTs5p+wE48+PCn6E2n5IthpM5sg=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		o7DuwpPJXQ78LxDPvxwwxl9Biao=
+		vcL0a+b05yWKY7iIk7/GfSEtmXA=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -42,19 +42,19 @@
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		0FsfU3V1R1B15tmZgttRKw3sffs=
+		bRVW2vVFZNQlVNZNHRZcgQXQPHA=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Xu7b3rDHR8fHzFY6OTbYg9whVog=
+		ikxKKBmhv1GDVgk23xWWPxJa3W4=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		0FsfU3V1R1B15tmZgttRKw3sffs=
+		bRVW2vVFZNQlVNZNHRZcgQXQPHA=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		k4hy5ahyElsUL94+4GtXQwbkkXY=
+		lp3z2Ru4bLXVxt8QEeEib8PiPyw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+SvsIii9yOCSXMrDj272Q2j0+Az3a9JYhV9ygDF9bMA=
+			DKg7Ut9e04AS4yvHwJcSaXUtK/pT0RT5jWYZRL+LMwY=
 			</data>
 		</dict>
 		<key>Headers/Zscaler.h</key>
@@ -88,28 +88,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			s3qzmFge77JRXnvIXoZm4yCyc7/43vftWkfoj/am780=
+			qDjZ/o+D29miZ2D4qTHgLAIkvSFUMZEpn3pnB0QIuRk=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w3ChIwYXzBAmn9mX3fivm8SK8JyQ9Copt1ZwHJvDykM=
+			ROMXLT0kdsEDijeHfkGRg9NJX6HOR56pT5D5ZqGF9cE=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s3qzmFge77JRXnvIXoZm4yCyc7/43vftWkfoj/am780=
+			qDjZ/o+D29miZ2D4qTHgLAIkvSFUMZEpn3pnB0QIuRk=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			n4OCEmEIOEQhime7qgF/0TEVfdKB3i7AN8LmKL8nqTU=
+			iMbwKEIT9lK/Pwebg77zvSlhMn4AXDAWLJxgJphvdeU=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -123,28 +123,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mGgybArjrj57IrLFcpMmlDdGTTZNrP4KRutC+UtDrgs=
+			9183MZwXmfdyjiSh9Imw2+rGFuMHslpd9HAyjS63awM=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N0sdNlh08PqTh+ojaXl99lqO6c96pT/DmN+0x46gORI=
+			ApsUjcy2CdUsUGtk07N7sBwo42dq+JDQJ1NXEpcH71U=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mGgybArjrj57IrLFcpMmlDdGTTZNrP4KRutC+UtDrgs=
+			9183MZwXmfdyjiSh9Imw2+rGFuMHslpd9HAyjS63awM=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FW8Ov/L+0jUhRCrMV+KZjskcxY7kr9NJ7mpVAMUpHjA=
+			XBpOKcd9m9qe4V/IuaWr6D+CogwiLdPZ4qn9kR259fE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

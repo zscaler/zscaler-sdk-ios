@@ -350,8 +350,6 @@ SWIFT_CLASS("_TtC7Zscaler10ZscalerSDK")
 @property (nonatomic, readonly, strong) ZscalerSDKProxyInfo * _Nullable proxyInfo;
 /// Settable configuration for the SDK. Setting configuration applies it immediately.
 @property (nonatomic, strong) ZscalerSDKConfiguration * _Nonnull configuration;
-/// Initialize with a configuration.
-- (nonnull instancetype)initWithConfiguration:(ZscalerSDKConfiguration * _Nonnull)configuration OBJC_DESIGNATED_INITIALIZER;
 /// Suspends the proxy server.
 /// This is expected to be called before the app is suspended, usually in applicationDidEnterBackground.
 /// warning:
@@ -369,7 +367,7 @@ SWIFT_CLASS("_TtC7Zscaler10ZscalerSDK")
 /// Start a longer-term zero trust tunnel.
 - (void)startZeroTrustTunnelWithAppKey:(NSString * _Nonnull)appKey deviceUdid:(NSString * _Nonnull)deviceUdid accessToken:(NSString * _Nonnull)accessToken completionHandler:(void (^ _Nonnull)(NSError * _Nullable))completionHandler;
 /// Stops all tunnel types.
-- (void)stopTunnel;
+- (void)stopTunnelWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
 /// Resets the proxy port.
 /// This function should be used sparingly, as it requires the client application to recreate all their URLSessions.
 /// This is an exceptional case and should only be used when the client is aware of the potential consequences and has a valid reason to reset the proxy port.
@@ -379,6 +377,8 @@ SWIFT_CLASS("_TtC7Zscaler10ZscalerSDK")
 /// This function should be used with caution, as it may cause unexpected behavior in the client application.
 - (void)resetProxyPortAndRequireSessionRecreation;
 /// Export logs to a given directory. Returns a URL pointing to a zip containing logs.
+/// note:
+/// This function ensures that the destination string always starts with the “file://” prefix, which is likely a requirement for the log export functionality to work correctly.
 - (NSURL * _Nullable)exportLogsToDestination:(NSString * _Nonnull)destination SWIFT_WARN_UNUSED_RESULT;
 /// Clear all logs.
 - (void)clearLogs;

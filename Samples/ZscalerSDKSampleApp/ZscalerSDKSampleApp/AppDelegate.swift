@@ -6,7 +6,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        CrashlyticsService.shared.initCrashlytics()
+        if isGoogleServicePlistValid() {
+            CrashlyticsService.shared.initCrashlytics()
+        }
         return true
     }
 
@@ -22,5 +24,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+
+    func isGoogleServicePlistValid() -> Bool {
+        struct GooleServiceInfoPlist: Codable {
+            let API_KEY: String
+        }
+
+        guard let fileUrl = Bundle.main.url(forResource: "GoogleService-Info", withExtension: "plist") else {
+            return false
+        }
+
+        do {
+            let data = try Data(contentsOf: fileUrl)
+            let plist = try PropertyListDecoder().decode(GooleServiceInfoPlist.self, from: data)
+            return !plist.API_KEY.isEmpty
+        } catch {
+            return false
+        }
     }
 }

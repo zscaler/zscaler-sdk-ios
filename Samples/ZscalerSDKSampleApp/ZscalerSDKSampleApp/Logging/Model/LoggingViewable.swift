@@ -1,7 +1,6 @@
 import UIKit
 
-protocol LoggingViewable: LoadingViewable, AnyObject {
-    func showError(_ errorDescription: String)
-    func exportLogs(_ model: ZscalerLogModel)
-    func clearLogs()
+protocol LoggingViewable: AnyObject {
+    func didExportLogs(_ errorDescription: ZscalerLogModel)
+    func exportLogsDidFail(_ errorDescription: String)
 }

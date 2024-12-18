@@ -18,19 +18,25 @@ public class TunnelPresenter: TunnelPresenting {
                 let response = try await self.tunnelService.startPreLoginTunnel(request)
                 DispatchQueue.main.async {
                     self.view?.hideLoading()
-                    self.view?.startProxyOnTunnelConnect(tunnelType: .preLogin, response: response)
+                    self.view?.tunnelDidStart(tunnelType: .preLogin, response: response)
                 }
             } catch {
                 DispatchQueue.main.async {
                     self.view?.hideLoading()
-                    self.view?.failureOnStart(.preLogin, error)
+                    self.view?.tunnelDidFail(.preLogin, error)
                 }
             }
         }
     }
 
     public func stopTunnel() {
-        tunnelService.stopTunnel()
+        view?.showLoading()
+        Task {
+            await tunnelService.stopTunnel()
+            DispatchQueue.main.async {
+                self.view?.hideLoading()
+            }
+        }
     }
 
     public func startZeroTrustTunnel(request: TunnelRequest) {
@@ -38,14 +44,15 @@ public class TunnelPresenter: TunnelPresenting {
         Task { [unowned self] in
             do {
                 let response = try await self.tunnelService.startZeroTrustTunnel(request)
+                print("Done")
                 DispatchQueue.main.async {
                     self.view?.hideLoading()
-                    self.view?.startProxyOnTunnelConnect(tunnelType: .zeroTrust, response: response)
+                    self.view?.tunnelDidStart(tunnelType: .zeroTrust, response: response)
                 }
             } catch {
                 DispatchQueue.main.async {
                     self.view?.hideLoading()
-                    self.view?.failureOnStart(.zeroTrust, error)
+                    self.view?.tunnelDidFail(.zeroTrust, error)
                 }
             }
         }

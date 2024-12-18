@@ -66,8 +66,8 @@ public class TunnelingService {
         return TunnelResponse(host: proxyInfo.proxyHost, portNumber: proxyInfo.proxyPort)
     }
 
-    public func stopTunnel() {
-        zscalerSDK.stopTunnel()
+    public func stopTunnel() async {
+        await zscalerSDK.stopTunnel()
     }
 
     public func setup(sessionConfiguration: URLSessionConfiguration) -> Bool {

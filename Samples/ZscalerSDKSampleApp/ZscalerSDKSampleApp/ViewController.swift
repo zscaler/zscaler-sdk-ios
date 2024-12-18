@@ -6,6 +6,7 @@ import WebKit
 public enum HttpMethodType: String {
     case get   = "GET"
     case post  = "POST"
+    case web   = "WEB"
 }
 
 enum TunnelType: String {
@@ -19,7 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var appKeyTextField: UITextField!
     @IBOutlet weak var accessTokenTextField: UITextField!
 
-    @IBOutlet weak var browserView: WKWebView!
     @IBOutlet weak var browserURLTextField: UITextField!
 
     @IBOutlet weak var preLoginTunnelSwitch: UISwitch!
@@ -37,6 +37,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var notificationMessageLabel: UILabel!
     @IBOutlet weak var notificationViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var notificationMessageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var webViewContainerView: UIStackView!
+
+    var browserView: WKWebView?
 
     private var httpMethodType: HttpMethodType = .get
 
@@ -57,10 +60,8 @@ class ViewController: UIViewController {
         initializeServices()
 
         defaultTunnelStatus()
-        defaultBrowserContent()
 
         browserURLTextField.delegate = self
-        browserView.navigationDelegate = self
 
         // These are the hard coded values for the sample app
         appKeyBase64String()
@@ -152,6 +153,8 @@ class ViewController: UIViewController {
             case .get:
                 httpMethodType = .post
             case .post:
+                httpMethodType = .web
+            case .web:
                 httpMethodType = .get
         }
         sender.setTitle(httpMethodType.rawValue, for: .normal)
@@ -176,13 +179,14 @@ class ViewController: UIViewController {
             self.browserURLTextField.resignFirstResponder()
         }
         
-
-        guard httpMethodType == .get else {
-            self.clientPresenter?.executeRequest(method: .post, url: url)
-            return
+        switch httpMethodType {
+        case .get, .post:
+            self.clientPresenter?.executeRequest(method: httpMethodType, url: url)
+        case .web:
+            self.showBrowser()
+            let request = URLRequest(url: url)
+            self.browserView?.load(request)
         }
-
-        self.clientPresenter?.executeRequest(method: httpMethodType, url: url)
     }
 
     @IBAction func exportLogs(_ sender: UIButton) {
@@ -193,10 +197,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clearLogsAction(_ sender: UIButton) {
-        self.clearLogs()
+        self.loggingPresenter?.clearLogs()
         showAlert(title: "Log Status", message: "Logs has been cleared")
     }
 
+    
+    @IBAction func EventLogs(_ sender: UIButton) {
+        let csvViewController = CSVViewController()
+        let navigationController = UINavigationController(rootViewController: csvViewController)
+        present(navigationController, animated: true, completion: nil)
+    }
+    
     @IBAction func showMoreOptions(_ sender: UIButton) {
         let configOptionsView = ConfigurationOptionsView(dismiss: { [weak self] config in
             self?.tunnelPresenter?.updateConfiguration(config)
@@ -268,6 +279,17 @@ extension ViewController: UITextFieldDelegate {
 }
 
 extension ViewController: LoggingViewable {
+    func didExportLogs(_ model: ZscalerLogModel) {
+        shareLogs(url: model.exportURL())
+    }
+
+    func exportLogsDidFail(_ errorDescription: String) {
+        DispatchQueue.main.async {
+            self.zpaConnectedLabel.isHidden = false
+            self.zpaConnectedLabel.text = errorDescription
+        }
+    }
+
     func showLoading() {
         if self.loadingView.isHidden {
             self.loadingView.isHidden = false
@@ -278,30 +300,21 @@ extension ViewController: LoggingViewable {
     func hideLoading() {
         self.loadingView.stopAnimating()
     }
-
-    func showError(_ errorDescription: String) {
-        DispatchQueue.main.async {
-            self.zpaConnectedLabel.isHidden = false
-            self.zpaConnectedLabel.text = errorDescription
-        }
-    }
-
-    func exportLogs(_ model: ZscalerLogModel) {
-        shareLogs(url: model.exportURL())
-    }
-
-    func clearLogs() {
-        self.loggingPresenter?.clearLogs()
-    }
 }
 
 extension ViewController : TunnelingViewable {
-    func failureOnStart(_ tunnelType: TunnelType, _ error: Error) {
+    func tunnelDidStart(tunnelType: TunnelType, response: TunnelResponse) {
+        self.zpaConnectedLabel.isHidden = true
+        self.showAlert(tunnelType: tunnelType)
+        self.startTunnelTimer(tunnelType: tunnelType)
+    }
+
+    func tunnelDidFail(_ tunnelType: TunnelType, _ error: Error) {
         forceTunnelSwitchOff(tunnelType: tunnelType)
         showAlert(title: "Tunnel Status",
                   message: "Failed to start tunnel with error code: \(error.localizedDescription)")
     }
-    
+
     func showAlert(tunnelType: TunnelType) {
         switch tunnelType {
             case .preLogin:
@@ -351,12 +364,6 @@ extension ViewController : TunnelingViewable {
         }
     }
 
-    func startProxyOnTunnelConnect(tunnelType: TunnelType, response: TunnelResponse) {
-        self.zpaConnectedLabel.isHidden = true
-        self.showAlert(tunnelType: tunnelType)
-        self.startTunnelTimer(tunnelType: tunnelType)
-    }
-
     func startTunnelTimer(tunnelType: TunnelType) {
         statusTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { timer in
             let status = self.tunnelPresenter?.showStatus()
@@ -397,10 +404,10 @@ extension ViewController : TunnelingViewable {
 extension ViewController: BrowserViewable {
     func renderTunnelContent(_ data: Data,  _ response: HTTPURLResponse) {
         self.showBrowser()
-        self.browserView.load(data,
-                              mimeType: response.mimeType ?? "text/html",
-                              characterEncodingName: "utf-8",
-                              baseURL: response.url ?? URL(string: "about:blank")!)
+        self.browserView?.load(data,
+                               mimeType: response.mimeType ?? "text/html",
+                               characterEncodingName: "utf-8",
+                               baseURL: response.url ?? URL(string: "about:blank")!)
     }
     
     func renderBlankContent(error: any Error) {
@@ -408,25 +415,39 @@ extension ViewController: BrowserViewable {
         self.zpaConnectedLabel.text = error.localizedDescription
     }
 
-    func showBrowser() {
-        self.browserView.isHidden = false
+    private func createWebview() {
+        if let browserView = self.browserView {
+            self.webViewContainerView.removeArrangedSubview(browserView)
+            self.browserView = nil
+        }
+        let webview = WKWebView()
+        URLCache.shared.removeAllCachedResponses()
+        self.browserView = webview
+        webview.navigationDelegate = self
+        self.webViewContainerView.addArrangedSubview(webview)
+    }
+
+    private func showBrowser() {
+        createWebview()
+        self.browserView?.isHidden = false
         self.zpaConnectedLabel.isHidden = true
     }
 
-    func hideBrowser() {
-        self.browserView.isHidden = true
+    private func hideBrowser() {
+        self.browserView?.isHidden = true
         self.zpaConnectedLabel.isHidden = false
     }
 
-    func defaultTunnelStatus() {
+    private func defaultTunnelStatus() {
         zpaConnectedLabel.text = defaultTunnelMessage
     }
 
-    func defaultBrowserContent() {
-        self.browserView.load(Data([]),
-                              mimeType: "text/html",
-                              characterEncodingName: "utf-8",
-                              baseURL: URL(string: "about:blank")!)
+    private func defaultBrowserContent() {
+        createWebview()
+        self.browserView?.load(Data([]),
+                               mimeType: "text/html",
+                               characterEncodingName: "utf-8",
+                               baseURL: URL(string: "about:blank")!)
     }
 }
 
@@ -485,9 +506,6 @@ extension ViewController {
 
 extension ViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if let urlStr = navigationAction.request.url?.absoluteString {
-            self.browserURLTextField.text = urlStr
-        }
         decisionHandler(.allow)
     }
 }

@@ -73,6 +73,13 @@
             ReferencedContainer = "container:ZscalerSDKSampleApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "ZSDK_CONFIG_OVERRIDE"
+            value = "{}"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

@@ -43,6 +43,7 @@
 		A5DE90D82C5B55950088315E /* ConfigurationOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE90D62C5B55950088315E /* ConfigurationOptionsViewModel.swift */; };
 		A5DE90D92C5B55950088315E /* ConfigurationOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE90D72C5B55950088315E /* ConfigurationOptionsView.swift */; };
 		A5DE90DB2C5B559A0088315E /* ConfigurationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE90DA2C5B559A0088315E /* ConfigurationOptions.swift */; };
+		FC4229C52CC7B19E00AB102C /* EventLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4229C42CC7B19900AB102C /* EventLogsView.swift */; };
 		FC69F85C2C6A207E00642902 /* secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = FC69F85B2C6A207E00642902 /* secrets.json */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 		A5DE90D62C5B55950088315E /* ConfigurationOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationOptionsViewModel.swift; sourceTree = "<group>"; };
 		A5DE90D72C5B55950088315E /* ConfigurationOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationOptionsView.swift; sourceTree = "<group>"; };
 		A5DE90DA2C5B559A0088315E /* ConfigurationOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationOptions.swift; sourceTree = "<group>"; };
+		FC4229C42CC7B19900AB102C /* EventLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLogsView.swift; sourceTree = "<group>"; };
 		FC69F85B2C6A207E00642902 /* secrets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = secrets.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 		128A221D2B4431AF00FFD13D /* ZscalerSDKSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC4229C62CC7B99300AB102C /* EventLogs */,
 				A5DE90D52C5B55880088315E /* ConfigurationOptions */,
 				A576D5AE2BC0561C00426982 /* Client */,
 				A569BD7D2C4E71C900DFBD0A /* CrashlyticsService */,
@@ -327,6 +330,14 @@
 			path = ConfigurationOptions;
 			sourceTree = "<group>";
 		};
+		FC4229C62CC7B99300AB102C /* EventLogs */ = {
+			isa = PBXGroup;
+			children = (
+				FC4229C42CC7B19900AB102C /* EventLogsView.swift */,
+			);
+			path = EventLogs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,9 +347,10 @@
 			buildPhases = (
 				128A22172B4431AF00FFD13D /* Sources */,
 				128A22182B4431AF00FFD13D /* Frameworks */,
+				33AC00D32CEE25E70078EBDB /* Create Secrets File */,
 				128A22192B4431AF00FFD13D /* Resources */,
 				336212F02BF67D8F00A1AA38 /* Embed Frameworks */,
-				A58861312C4E866F00554987 /* ShellScript */,
+				A58861312C4E866F00554987 /* Run Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -464,7 +476,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A58861312C4E866F00554987 /* ShellScript */ = {
+		33AC00D32CEE25E70078EBDB /* Create Secrets File */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Create Secrets File";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SOURCE_ROOT)/$(PROJECT_NAME)/secrets.json",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -xeu\ntouch $SOURCE_ROOT/$PROJECT_NAME/secrets.json\n";
+		};
+		A58861312C4E866F00554987 /* Run Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -478,6 +510,7 @@
 				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
 				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
 			);
+			name = "Run Crashlytics";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -500,6 +533,7 @@
 				A576D57A2BBFC21200426982 /* LoggingPresenting.swift in Sources */,
 				A576D5AB2BC0537300426982 /* ClientPresenting.swift in Sources */,
 				A569BD7F2C4E71DE00DFBD0A /* CrashlyticsService.swift in Sources */,
+				FC4229C52CC7B19E00AB102C /* EventLogsView.swift in Sources */,
 				128A221F2B4431AF00FFD13D /* AppDelegate.swift in Sources */,
 				128A22212B4431AF00FFD13D /* SceneDelegate.swift in Sources */,
 				A576D57E2BBFF8BA00426982 /* LoggingService.swift in Sources */,
