@@ -1,5 +1,5 @@
 
-# Zscaler SDK for Mobile Apps
+# Zscaler SDK for Mobile Apps - iOS
 
 Zscaler SDK, part of the Zscaler Zero Trust Exchange™ platform, combines a set of robust capabilities to protect the integrity of your intellectual property, secure network communications from your mobile application, and prevent breaches against your APIs and core backend services.
 
