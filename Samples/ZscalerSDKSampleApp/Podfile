@@ -1,0 +1,11 @@
+
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '15.0'
+
+target 'ZscalerSDKSampleApp' do
+  use_frameworks!
+  pod 'Firebase/Crashlytics'
+  pod 'ZscalerSDK', :path => '../../'
+end
+

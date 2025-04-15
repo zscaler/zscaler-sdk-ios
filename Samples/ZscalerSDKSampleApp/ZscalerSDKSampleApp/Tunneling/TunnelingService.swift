@@ -24,7 +24,6 @@ public class TunnelingService {
     }
 
     func willEnterForeground() {
-        let app = UIApplication.shared
         DispatchQueue.global().async { [unowned self] in
             self.invalidateBackgroundTask()
         }
@@ -74,7 +73,7 @@ public class TunnelingService {
         return zscalerSDK.setup(sessionConfiguration: sessionConfiguration)
     }
 
-    public func showTunnelStatus() -> String {
+    public func showTunnelStatus() -> ZscalerSDKTunnelStatus {
         zscalerSDK.status()
     }
 

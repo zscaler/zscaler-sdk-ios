@@ -1,4 +1,5 @@
 import Foundation
+import Zscaler
 
 public class TunnelPresenter: TunnelPresenting {
 
@@ -58,7 +59,7 @@ public class TunnelPresenter: TunnelPresenting {
         }
     }
 
-    public func showStatus() -> String {
+    public func showStatus() -> ZscalerSDKTunnelStatus {
         tunnelService.showTunnelStatus()
     }
 

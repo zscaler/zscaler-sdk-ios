@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Zscaler
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Combine
 import Foundation
 import MetricKit
@@ -24,7 +25,7 @@ import _SwiftConcurrencyShims
 }
 extension Zscaler.LogLevel : Swift.CaseIterable {
   public typealias AllCases = [Zscaler.LogLevel]
-  public static var allCases: [Zscaler.LogLevel] {
+  nonisolated public static var allCases: [Zscaler.LogLevel] {
     get
   }
 }
@@ -65,6 +66,9 @@ extension Zscaler.ZscalerSDKError.ErrorCode {
   public static let permissionDenied: Zscaler.ZscalerSDKError.ErrorCode
   public static let tunnelAlreadyRunning: Zscaler.ZscalerSDKError.ErrorCode
   public static let tunnelStartPendingInSDK: Zscaler.ZscalerSDKError.ErrorCode
+  public static let tunnelAuthenticationFailed: Zscaler.ZscalerSDKError.ErrorCode
+  public static let connectionTerminatedWhileUpgrading: Zscaler.ZscalerSDKError.ErrorCode
+  public static let tunnelUpgradeFailed: Zscaler.ZscalerSDKError.ErrorCode
 }
 extension Zscaler.ZscalerSDKError.ErrorCode {
   public static let csrSignFailure: Zscaler.ZscalerSDKError.ErrorCode
@@ -81,8 +85,8 @@ extension Zscaler.ZscalerSDKError.ErrorCode {
   public static let tokenExpired: Zscaler.ZscalerSDKError.ErrorCode
   public static let tokenValidationFailed: Zscaler.ZscalerSDKError.ErrorCode
   public static let tokenClaimValidationFailed: Zscaler.ZscalerSDKError.ErrorCode
-  public static let missingCertificateIdOauth2_CLIENT: Zscaler.ZscalerSDKError.ErrorCode
-  public static let missingPrivateKeyOauth2_CLIENT: Zscaler.ZscalerSDKError.ErrorCode
+  public static let missingCertificateIdOauth2Client: Zscaler.ZscalerSDKError.ErrorCode
+  public static let missingPrivateKeyOAuth2Client: Zscaler.ZscalerSDKError.ErrorCode
   public static let failureGeneratingClientAssertion: Zscaler.ZscalerSDKError.ErrorCode
   public static let failureGeneratingSamlAssertion: Zscaler.ZscalerSDKError.ErrorCode
   public static let failureSigningSamlAssertion: Zscaler.ZscalerSDKError.ErrorCode
@@ -91,10 +95,11 @@ extension Zscaler.ZscalerSDKError.ErrorCode {
   public static let unsupportedCustomerTokenType: Zscaler.ZscalerSDKError.ErrorCode
   public static let hmacSecretFailed: Zscaler.ZscalerSDKError.ErrorCode
   public static let hmacValidationFailed: Zscaler.ZscalerSDKError.ErrorCode
+  public static let missingSubInAccessToken: Zscaler.ZscalerSDKError.ErrorCode
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class ZscalerSDK : ObjectiveC.NSObject {
   @objc public static func sharedInstance() -> Zscaler.ZscalerSDK
-  @objc public func status() -> Swift.String
+  @objc public func status() -> Zscaler.ZscalerSDKTunnelStatus
   @objc public var proxyInfo: Zscaler.ZscalerSDKProxyInfo? {
     @objc get
   }
@@ -105,23 +110,28 @@ extension Zscaler.ZscalerSDKError.ErrorCode {
   @objc public func suspend()
   @objc public func resume()
   @objc public func setup(sessionConfiguration: Foundation.URLSessionConfiguration) -> Swift.Bool
-  #if compiler(>=5.3) && $AsyncAwait
   @objc @available(iOS 17, *)
-  public func setup(websiteDataStore: WebKit.WKWebsiteDataStore) async -> Swift.Bool
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
+  @_Concurrency.MainActor public func setup(websiteDataStore: WebKit.WKWebsiteDataStore) -> Swift.Bool
   @objc public func startPreLoginTunnel(appKey: Swift.String, deviceUdid: Swift.String) async throws
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   @objc public func startZeroTrustTunnel(appKey: Swift.String, deviceUdid: Swift.String, accessToken: Swift.String) async throws
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   @objc public func stopTunnel() async
-  #endif
   @objc public func resetProxyPortAndRequireSessionRecreation()
   @objc(exportLogsToDestination:) public func exportLogs(destination: Swift.String) -> Foundation.URL?
   @objc public func clearLogs()
+  @objc public func getClientPublicIp() -> Swift.String
   @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class ZscalerSDKTunnelType : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public static func == (lhs: Zscaler.ZscalerSDKTunnelType, rhs: Zscaler.ZscalerSDKTunnelType) -> Swift.Bool
+  @objc deinit
+}
+extension Zscaler.ZscalerSDKTunnelType {
+  @objc public static let preLogin: Zscaler.ZscalerSDKTunnelType
+  @objc public static let zeroTrust: Zscaler.ZscalerSDKTunnelType
+  @objc public static let unknown: Zscaler.ZscalerSDKTunnelType
 }
 @objc @objcMembers public class ZscalerSDKConfiguration : ObjectiveC.NSObject {
   @objc public static var defaultConfiguration: Zscaler.ZscalerSDKConfiguration {
@@ -137,19 +147,26 @@ extension Zscaler.ZscalerSDKError.ErrorCode {
   @objc public init(automaticallyConfigureRequests: Swift.Bool = false, automaticallyConfigureWebviews: Swift.Bool = false, useProxyAuthentication: Swift.Bool = false, failIfDeviceCompromised: Swift.Bool = false, blockZPAConnectionsOnTunnelFailure: Swift.Bool = false, enableDebugLogsInConsole: Swift.Bool = false, logLevel: Zscaler.LogLevel = .debug)
   @objc deinit
 }
-public enum NotificationObjectConstants : Swift.String {
-  case notificationNameKey
-  case notificationMessageKey
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
+@objc public class ZscalerSDKTunnelStatus : ObjectiveC.NSObject {
+  @objc public var tunnelConnectionState: Swift.String {
     get
   }
+  @objc public var tunnelType: Zscaler.ZscalerSDKTunnelType {
+    get
+  }
+  @objc public init(tunnelConnectionState: Swift.String, tunnelType: Zscaler.ZscalerSDKTunnelType)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class NotificationObjectConstants : ObjectiveC.NSObject {
+  @objc public static let notificationNameKey: Swift.String
+  @objc public static let notificationMessageKey: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
 }
 @objc extension Foundation.NSNotification {
   @objc public static let ZscalerSDKTunnelDisconnected: Foundation.NSNotification.Name
-  @objc public static let ZscalerSDKTunnelReadyToUse: Foundation.NSNotification.Name
-  @objc public static let ZscalerSDKTunnelConnectionFailed: Foundation.NSNotification.Name
+  @objc public static let ZscalerSDKTunnelConnected: Foundation.NSNotification.Name
+  @objc public static let ZscalerSDKTunnelReconnecting: Foundation.NSNotification.Name
   @objc public static let ZscalerSDKTunnelAuthenticationRequired: Foundation.NSNotification.Name
   @objc public static let ZscalerSDKTunnelResourceBlocked: Foundation.NSNotification.Name
   @objc public static let ZscalerSDKProxyStartFailed: Foundation.NSNotification.Name
@@ -157,6 +174,3 @@ public enum NotificationObjectConstants : Swift.String {
 extension Zscaler.LogLevel : Swift.Equatable {}
 extension Zscaler.LogLevel : Swift.Hashable {}
 extension Zscaler.LogLevel : Swift.RawRepresentable {}
-extension Zscaler.NotificationObjectConstants : Swift.Equatable {}
-extension Zscaler.NotificationObjectConstants : Swift.Hashable {}
-extension Zscaler.NotificationObjectConstants : Swift.RawRepresentable {}

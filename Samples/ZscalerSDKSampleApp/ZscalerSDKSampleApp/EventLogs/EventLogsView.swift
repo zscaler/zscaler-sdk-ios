@@ -8,9 +8,9 @@
 import UIKit
 import Zscaler
 
-class CSVViewController: UIViewController {
+class JSONViewController: UIViewController {
     
-    var csvContent: String?
+    var jsonContent: String?
 
     private var textView: UITextView!
     private var doneButton: UIBarButtonItem!
@@ -22,15 +22,15 @@ class CSVViewController: UIViewController {
         textView = UITextView(frame: self.view.bounds)
         textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         textView.isEditable = false
-        textView.text = csvContent
+        textView.text = jsonContent
         self.view.addSubview(textView)
         doneButton = UIBarButtonItem(title: "Done", style:.done, target: self, action: #selector(dismissViewController))
         navigationItem.rightBarButtonItem = doneButton
 
-        loadCSVContent()
+        loadJSONContent()
     }
     
-    private func loadCSVContent() {
+    private func loadJSONContent() {
             let fileManager = FileManager.default
             guard let appSupportDir = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
                 print("Error: Unable to get Application Support directory")
@@ -43,18 +43,18 @@ class CSVViewController: UIViewController {
                 .appendingPathComponent(Bundle(for: ZscalerSDK.self).bundleIdentifier ?? "com.zscaler.sdk.zscalersdk-ios")
                 .appendingPathComponent("logs")
                 
-            let csvFilePath = logDirPath.appendingPathComponent("events.csv")
-                   if fileManager.fileExists(atPath: csvFilePath.path) {
+            let jsonFilePath = logDirPath.appendingPathComponent("events.json")
+                   if fileManager.fileExists(atPath: jsonFilePath.path) {
                        do {
-                           csvContent = try String(contentsOf: csvFilePath, encoding: .utf8)
-                           textView.text = csvContent
+                           jsonContent = try String(contentsOf: jsonFilePath, encoding: .utf8)
+                           textView.text = jsonContent
                        } catch {
-                              print("Error reading CSV file: \(error)")
-                              textView.text = "Error reading CSV file: \(error)"
+                              print("Error reading JSON file: \(error)")
+                              textView.text = "Error reading JSON file: \(error)"
                           }
                    } else {
-                       print("CSV File not found at path: \(csvFilePath.path)")
-                       textView.text = "CSV File not found at path: \(csvFilePath.path)"
+                       print("JSON File not found at path: \(jsonFilePath.path)")
+                       textView.text = "JSON File not found at path: \(jsonFilePath.path)"
                    }
            
         }

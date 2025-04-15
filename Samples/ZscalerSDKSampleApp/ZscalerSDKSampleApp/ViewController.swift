@@ -91,7 +91,7 @@ class ViewController: UIViewController {
             self.showNotificationBanner(notification: notification)
         }
 
-        NotificationCenter.default.addObserver(forName: NSNotification.ZscalerSDKTunnelReadyToUse, object: nil, queue: .main) { notification in
+        NotificationCenter.default.addObserver(forName: NSNotification.ZscalerSDKTunnelConnected, object: nil, queue: .main) { notification in
             self.showNotificationBanner(notification: notification)
         }
 
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
             self.showNotificationBanner(notification: notification)
         }
 
-        NotificationCenter.default.addObserver(forName: NSNotification.ZscalerSDKTunnelConnectionFailed, object: nil, queue: .main) { notification in
+        NotificationCenter.default.addObserver(forName: NSNotification.ZscalerSDKTunnelReconnecting, object: nil, queue: .main) { notification in
             self.showNotificationBanner(notification: notification)
         }
 
@@ -203,8 +203,8 @@ class ViewController: UIViewController {
 
     
     @IBAction func EventLogs(_ sender: UIButton) {
-        let csvViewController = CSVViewController()
-        let navigationController = UINavigationController(rootViewController: csvViewController)
+        let jsonViewController = JSONViewController()
+        let navigationController = UINavigationController(rootViewController: jsonViewController)
         present(navigationController, animated: true, completion: nil)
     }
     
@@ -257,13 +257,13 @@ class ViewController: UIViewController {
                                                   name: NSNotification.ZscalerSDKTunnelDisconnected,
                                                   object: nil)
         NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.ZscalerSDKTunnelReadyToUse,
+                                                  name: NSNotification.ZscalerSDKTunnelConnected,
                                                   object: nil)
         NotificationCenter.default.removeObserver(self,
                                                   name: NSNotification.ZscalerSDKTunnelResourceBlocked,
                                                   object: nil)
         NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.ZscalerSDKTunnelConnectionFailed,
+                                                  name: NSNotification.ZscalerSDKTunnelReconnecting,
                                                   object: nil)
         NotificationCenter.default.removeObserver(self,
                                                   name: NSNotification.ZscalerSDKTunnelAuthenticationRequired,
@@ -309,8 +309,25 @@ extension ViewController : TunnelingViewable {
         self.startTunnelTimer(tunnelType: tunnelType)
     }
 
-    func tunnelDidFail(_ tunnelType: TunnelType, _ error: Error) {
-        forceTunnelSwitchOff(tunnelType: tunnelType)
+    func tunnelDidFail(_ failureTunnelType: TunnelType, _ error: Error) {
+        let error = error as NSError
+        
+        let isTunnelUpgradeFailure =
+        (failureTunnelType == .zeroTrust &&
+         error.code == ZscalerSDKError.ErrorCode.tunnelUpgradeFailed.rawValue)
+        
+        let status = ZscalerSDK.sharedInstance().status()
+        
+        let isPreloginTunnelStillActive =
+        (status.tunnelConnectionState == "ON" && status.tunnelType == .preLogin)
+        
+        if (isTunnelUpgradeFailure || isPreloginTunnelStillActive){
+            self.preLoginTunnelSwitch.setOn(true, animated: true)
+            self.zeroTrustTunnelSwitch.setOn(false, animated: true)
+        } else {
+            forceTunnelSwitchOff(tunnelType: failureTunnelType)
+        }
+            
         showAlert(title: "Tunnel Status",
                   message: "Failed to start tunnel with error code: \(error.localizedDescription)")
     }
@@ -328,20 +345,18 @@ extension ViewController : TunnelingViewable {
 
     func togglePreLoginTunnel(isOn: Bool) {
         if isOn {
-            self.zeroTrustTunnelSwitch.isEnabled = false
+            self.zeroTrustTunnelSwitch.setOn(false, animated: true)
             self.startPreLoginTunnel()
         } else {
-            self.zeroTrustTunnelSwitch.isEnabled = true
             self.stopTunnel()
         }
     }
     
     func toggleZeroTrustTunnel(isOn: Bool) {
         if isOn {
-            self.preLoginTunnelSwitch.isEnabled = false
+            self.preLoginTunnelSwitch.setOn(false, animated: true)
             self.startZeroTrustTunnel()
         } else {
-            self.preLoginTunnelSwitch.isEnabled = true
             self.stopTunnel()
         }
     }
@@ -357,19 +372,35 @@ extension ViewController : TunnelingViewable {
             case .unknown:
                 break
         }
-        if tunnelPresenter?.showStatus() == "OK"
-            ||
-           tunnelPresenter?.showStatus() == "CONNECTING" {
+        guard let tunnelConnectionState = tunnelPresenter?.showStatus().tunnelConnectionState else {
+            return
+        }
+        if tunnelConnectionState == "OK" || tunnelConnectionState == "CONNECTING" {
             stopTunnel()
         }
     }
 
     func startTunnelTimer(tunnelType: TunnelType) {
+        // Remove any previous timer
+        self.clearTunnelStatus()
         statusTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { timer in
             let status = self.tunnelPresenter?.showStatus()
-            self.statusTextView.text = String(format: "%@ - %@", tunnelType.rawValue,
-                                              status ?? "")
-            if status == "SERVER_DOWN_ERROR" {
+            var tunnelTypeStr = "INFO"
+            if let recievedTunnelType = status?.tunnelType {
+                switch recievedTunnelType {
+                case .preLogin:
+                    tunnelTypeStr = TunnelType.preLogin.rawValue
+                    break
+                case .zeroTrust:
+                    tunnelTypeStr = TunnelType.zeroTrust.rawValue
+                    break
+                default:
+                    tunnelTypeStr = "INFO"
+                }
+            }
+            self.statusTextView.text = String(format: "%@ - %@", tunnelTypeStr,
+                                              status?.tunnelConnectionState ?? "")
+            if status?.tunnelConnectionState == "SERVER_DOWN_ERROR" {
                 self.forceTunnelSwitchOff(tunnelType: tunnelType)
                 self.clearTunnelStatus()
                 self.stopAndClearTimer()

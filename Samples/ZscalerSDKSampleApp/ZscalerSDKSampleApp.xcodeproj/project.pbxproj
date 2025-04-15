@@ -16,9 +16,6 @@
 		128A22392B4431B200FFD13D /* ZscalerSDKSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A22382B4431B200FFD13D /* ZscalerSDKSampleAppTests.swift */; };
 		128A22432B4431B200FFD13D /* ZscalerSDKSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A22422B4431B200FFD13D /* ZscalerSDKSampleAppUITests.swift */; };
 		128A22452B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A22442B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift */; };
-		33568F5C2C37208300B89DE9 /* Zscaler.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3356EA1D2C371ED900B7743F /* Zscaler.xcframework */; };
-		33568F5D2C37208300B89DE9 /* Zscaler.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3356EA1D2C371ED900B7743F /* Zscaler.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A56799CF2C4FFB93007C68D2 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A56799CE2C4FFB93007C68D2 /* FirebaseCrashlytics */; };
 		A56799D12C4FFD08007C68D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56799D02C4FFD08007C68D2 /* GoogleService-Info.plist */; };
 		A569BD7F2C4E71DE00DFBD0A /* CrashlyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569BD7E2C4E71DE00DFBD0A /* CrashlyticsService.swift */; };
 		A576D57A2BBFC21200426982 /* LoggingPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5792BBFC21200426982 /* LoggingPresenting.swift */; };
@@ -71,12 +68,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				33568F5D2C37208300B89DE9 /* Zscaler.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		128A221B2B4431AF00FFD13D /* ZscalerSDKSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZscalerSDKSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128A221E2B4431AF00FFD13D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +88,6 @@
 		128A223E2B4431B200FFD13D /* ZscalerSDKSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZscalerSDKSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		128A22422B4431B200FFD13D /* ZscalerSDKSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZscalerSDKSampleAppUITests.swift; sourceTree = "<group>"; };
 		128A22442B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZscalerSDKSampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3356EA1D2C371ED900B7743F /* Zscaler.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:PCBCQZJ7S7:Zscaler inc"; lastKnownFileType = wrapper.xcframework; name = Zscaler.xcframework; path = ../../Zscaler.xcframework; sourceTree = "<group>"; };
 		A56799D02C4FFD08007C68D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A569BD7E2C4E71DE00DFBD0A /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
 		A576D5792BBFC21200426982 /* LoggingPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingPresenting.swift; sourceTree = "<group>"; };
@@ -125,8 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A56799CF2C4FFB93007C68D2 /* FirebaseCrashlytics in Frameworks */,
-				33568F5C2C37208300B89DE9 /* Zscaler.xcframework in Frameworks */,
 				A580AB9E2BAC2160005E1F27 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +206,6 @@
 		128A22512B44325500FFD13D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3356EA1D2C371ED900B7743F /* Zscaler.xcframework */,
 				A580AB9D2BAC2160005E1F27 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -357,9 +350,6 @@
 			dependencies = (
 			);
 			name = ZscalerSDKSampleApp;
-			packageProductDependencies = (
-				A56799CE2C4FFB93007C68D2 /* FirebaseCrashlytics */,
-			);
 			productName = ZscalerSDKSampleApp;
 			productReference = 128A221B2B4431AF00FFD13D /* ZscalerSDKSampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -432,9 +422,6 @@
 				Base,
 			);
 			mainGroup = 128A22122B4431AF00FFD13D;
-			packageReferences = (
-				A56799CD2C4FFB93007C68D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			productRefGroup = 128A221C2B4431AF00FFD13D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -517,7 +504,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -735,6 +722,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PCBCQZJ7S7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZscalerSDKSampleApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "ZscalerSDK Sample App";
@@ -747,7 +735,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zscaler.sdk.zscalersdk-ios.TestApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -767,6 +755,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = PCBCQZJ7S7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZscalerSDKSampleApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "ZscalerSDK Sample App";
@@ -779,7 +768,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zscaler.sdk.zscalersdk-ios.TestApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -902,25 +891,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A56799CD2C4FFB93007C68D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.29.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A56799CE2C4FFB93007C68D2 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A56799CD2C4FFB93007C68D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 128A22132B4431AF00FFD13D /* Project object */;
 }
