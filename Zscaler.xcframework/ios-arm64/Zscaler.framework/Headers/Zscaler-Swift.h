@@ -310,17 +310,16 @@ typedef SWIFT_ENUM(NSInteger, LogLevel, open) {
 };
 
 
-
 @interface NSNotification (SWIFT_EXTENSION(Zscaler))
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelDisconnected;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelDisconnected SWIFT_DEPRECATED_MSG("Renamed notifications for better objective-c support", "Name.ZscalerSDKTunnelDisconnected");)
 + (NSNotificationName _Nonnull)ZscalerSDKTunnelDisconnected SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelConnected;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelConnected SWIFT_DEPRECATED_MSG("Renamed notifications for better objective-c support", "Name.ZscalerSDKTunnelConnected");)
 + (NSNotificationName _Nonnull)ZscalerSDKTunnelConnected SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelReconnecting;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelReconnecting SWIFT_DEPRECATED_MSG("Renamed notifications for better objective-c support", "Name.ZscalerSDKTunnelReconnecting");)
 + (NSNotificationName _Nonnull)ZscalerSDKTunnelReconnecting SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelAuthenticationRequired;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelAuthenticationRequired SWIFT_DEPRECATED_MSG("Renamed notifications for better objective-c support", "Name.ZscalerSDKTunnelAuthenticationRequired");)
 + (NSNotificationName _Nonnull)ZscalerSDKTunnelAuthenticationRequired SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelResourceBlocked;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKTunnelResourceBlocked SWIFT_DEPRECATED_MSG("Renamed notifications for better objective-c support", "Name.ZscalerSDKTunnelResourceBlocked");)
 + (NSNotificationName _Nonnull)ZscalerSDKTunnelResourceBlocked SWIFT_WARN_UNUSED_RESULT;
 /// Indicates that ZscalerSDK has failed to set up it’s proxy. Requests using the proxy will fail.
 /// There are a few options for recovery:
@@ -333,7 +332,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _
 ///     If using automatic configuration, invalidate and recreate <em>all</em> URLSessions.
 ///   </li>
 /// </ol>
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKProxyStartFailed;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull ZscalerSDKProxyStartFailed SWIFT_DEPRECATED_MSG("Renamed notifications for better objective-c support", "Name.ZscalerSDKProxyStartFailed");)
 + (NSNotificationName _Nonnull)ZscalerSDKProxyStartFailed SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -341,9 +340,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _
 
 SWIFT_CLASS("_TtC7Zscaler27NotificationObjectConstants")
 @interface NotificationObjectConstants : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull notificationNameKey;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull notificationNameKey SWIFT_DEPRECATED_MSG("Renamed notifications for better objective-c support", "ZscalerSDKNotificationNameUserInfoKey");)
 + (NSString * _Nonnull)notificationNameKey SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull notificationMessageKey;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull notificationMessageKey SWIFT_DEPRECATED_MSG("Renamed notifications for better objective-c support", "ZscalerSDKNotificationMessageUserInfoKey");)
 + (NSString * _Nonnull)notificationMessageKey SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -445,47 +444,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ZscalerSDKCo
 - (nonnull instancetype)initWithAutomaticallyConfigureRequests:(BOOL)automaticallyConfigureRequests automaticallyConfigureWebviews:(BOOL)automaticallyConfigureWebviews useProxyAuthentication:(BOOL)useProxyAuthentication failIfDeviceCompromised:(BOOL)failIfDeviceCompromised blockZPAConnectionsOnTunnelFailure:(BOOL)blockZPAConnectionsOnTunnelFailure enableDebugLogsInConsole:(BOOL)enableDebugLogsInConsole logLevel:(enum LogLevel)logLevel OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-SWIFT_CLASS("_TtC7Zscaler19ZscalerSDKProxyInfo")
-@interface ZscalerSDKProxyInfo : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull proxyHost;
-@property (nonatomic, readonly) NSInteger proxyPort;
-@property (nonatomic, readonly, copy) NSString * _Nullable username;
-@property (nonatomic, readonly, copy) NSString * _Nullable password;
-- (nonnull instancetype)initWithHost:(NSString * _Nonnull)host port:(NSInteger)port username:(NSString * _Nullable)username password:(NSString * _Nullable)password OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class ZscalerSDKTunnelType;
-
-SWIFT_CLASS("_TtC7Zscaler22ZscalerSDKTunnelStatus")
-@interface ZscalerSDKTunnelStatus : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull tunnelConnectionState;
-@property (nonatomic, readonly, strong) ZscalerSDKTunnelType * _Nonnull tunnelType;
-- (nonnull instancetype)initWithTunnelConnectionState:(NSString * _Nonnull)tunnelConnectionState tunnelType:(ZscalerSDKTunnelType * _Nonnull)tunnelType OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-SWIFT_CLASS("_TtC7Zscaler20ZscalerSDKTunnelType")
-@interface ZscalerSDKTunnelType : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-@interface ZscalerSDKTunnelType (SWIFT_EXTENSION(Zscaler))
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ZscalerSDKTunnelType * _Nonnull preLogin;)
-+ (ZscalerSDKTunnelType * _Nonnull)preLogin SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ZscalerSDKTunnelType * _Nonnull zeroTrust;)
-+ (ZscalerSDKTunnelType * _Nonnull)zeroTrust SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ZscalerSDKTunnelType * _Nonnull unknown;)
-+ (ZscalerSDKTunnelType * _Nonnull)unknown SWIFT_WARN_UNUSED_RESULT;
 @end
 
 #endif

@@ -18,23 +18,12 @@
 		128A22452B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A22442B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift */; };
 		A56799D12C4FFD08007C68D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56799D02C4FFD08007C68D2 /* GoogleService-Info.plist */; };
 		A569BD7F2C4E71DE00DFBD0A /* CrashlyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569BD7E2C4E71DE00DFBD0A /* CrashlyticsService.swift */; };
-		A576D57A2BBFC21200426982 /* LoggingPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5792BBFC21200426982 /* LoggingPresenting.swift */; };
-		A576D57C2BBFC24100426982 /* LoggingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D57B2BBFC24100426982 /* LoggingPresenter.swift */; };
-		A576D57E2BBFF8BA00426982 /* LoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D57D2BBFF8BA00426982 /* LoggingService.swift */; };
-		A576D5822BBFFC3500426982 /* LoggingViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5812BBFFC3500426982 /* LoggingViewable.swift */; };
-		A576D5872BBFFDE200426982 /* ZscalerLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5862BBFFDE200426982 /* ZscalerLogModel.swift */; };
-		A576D58B2BC00DEE00426982 /* TunnelingViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D58A2BC00DEE00426982 /* TunnelingViewable.swift */; };
-		A576D5902BC00E6600426982 /* TunnelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D58F2BC00E6600426982 /* TunnelRequest.swift */; };
-		A576D5942BC00EAE00426982 /* TunnelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5932BC00EAE00426982 /* TunnelResponse.swift */; };
-		A576D5962BC00ED900426982 /* TunnelingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5952BC00ED900426982 /* TunnelingService.swift */; };
-		A576D59C2BC0112F00426982 /* TunnelPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D59B2BC0112F00426982 /* TunnelPresenting.swift */; };
-		A576D59E2BC0113900426982 /* TunnelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D59D2BC0113900426982 /* TunnelPresenter.swift */; };
-		A576D5A02BC015A000426982 /* LoadingViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D59F2BC015A000426982 /* LoadingViewable.swift */; };
-		A576D5A32BC019A300426982 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5A22BC019A300426982 /* HttpService.swift */; };
-		A576D5A62BC04DDB00426982 /* BrowserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5A52BC04DDB00426982 /* BrowserResponse.swift */; };
-		A576D5AB2BC0537300426982 /* ClientPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5AA2BC0537300426982 /* ClientPresenting.swift */; };
-		A576D5AD2BC0537C00426982 /* ClientPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5AC2BC0537C00426982 /* ClientPresenter.swift */; };
-		A576D5B02BC0562D00426982 /* BrowserViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5AF2BC0562D00426982 /* BrowserViewable.swift */; };
+		A576D57C2BBFC24100426982 /* LoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D57B2BBFC24100426982 /* LoggingService.swift */; };
+		A576D5822BBFFC3500426982 /* LoggingServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5812BBFFC3500426982 /* LoggingServiceDelegate.swift */; };
+		A576D58B2BC00DEE00426982 /* TunnelServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D58A2BC00DEE00426982 /* TunnelServiceDelegate.swift */; };
+		A576D5962BC00ED900426982 /* TunnelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5952BC00ED900426982 /* TunnelService.swift */; };
+		A576D5AD2BC0537C00426982 /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5AC2BC0537C00426982 /* HttpRequestService.swift */; };
+		A576D5B02BC0562D00426982 /* HttpRequestServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5AF2BC0562D00426982 /* HttpRequestServiceDelegate.swift */; };
 		A580AB9E2BAC2160005E1F27 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A580AB9D2BAC2160005E1F27 /* WebKit.framework */; };
 		A5C04AD92BC1177F00654576 /* TunnelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C04AD82BC1177F00654576 /* TunnelConstants.swift */; };
 		A5DE90D82C5B55950088315E /* ConfigurationOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE90D62C5B55950088315E /* ConfigurationOptionsViewModel.swift */; };
@@ -90,23 +79,12 @@
 		128A22442B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZscalerSDKSampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A56799D02C4FFD08007C68D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A569BD7E2C4E71DE00DFBD0A /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
-		A576D5792BBFC21200426982 /* LoggingPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingPresenting.swift; sourceTree = "<group>"; };
-		A576D57B2BBFC24100426982 /* LoggingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingPresenter.swift; sourceTree = "<group>"; };
-		A576D57D2BBFF8BA00426982 /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
-		A576D5812BBFFC3500426982 /* LoggingViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingViewable.swift; sourceTree = "<group>"; };
-		A576D5862BBFFDE200426982 /* ZscalerLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZscalerLogModel.swift; sourceTree = "<group>"; };
-		A576D58A2BC00DEE00426982 /* TunnelingViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelingViewable.swift; sourceTree = "<group>"; };
-		A576D58F2BC00E6600426982 /* TunnelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelRequest.swift; sourceTree = "<group>"; };
-		A576D5932BC00EAE00426982 /* TunnelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelResponse.swift; sourceTree = "<group>"; };
-		A576D5952BC00ED900426982 /* TunnelingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelingService.swift; sourceTree = "<group>"; };
-		A576D59B2BC0112F00426982 /* TunnelPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelPresenting.swift; sourceTree = "<group>"; };
-		A576D59D2BC0113900426982 /* TunnelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelPresenter.swift; sourceTree = "<group>"; };
-		A576D59F2BC015A000426982 /* LoadingViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewable.swift; sourceTree = "<group>"; };
-		A576D5A22BC019A300426982 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
-		A576D5A52BC04DDB00426982 /* BrowserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserResponse.swift; sourceTree = "<group>"; };
-		A576D5AA2BC0537300426982 /* ClientPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPresenting.swift; sourceTree = "<group>"; };
-		A576D5AC2BC0537C00426982 /* ClientPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPresenter.swift; sourceTree = "<group>"; };
-		A576D5AF2BC0562D00426982 /* BrowserViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewable.swift; sourceTree = "<group>"; };
+		A576D57B2BBFC24100426982 /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
+		A576D5812BBFFC3500426982 /* LoggingServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingServiceDelegate.swift; sourceTree = "<group>"; };
+		A576D58A2BC00DEE00426982 /* TunnelServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelServiceDelegate.swift; sourceTree = "<group>"; };
+		A576D5952BC00ED900426982 /* TunnelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelService.swift; sourceTree = "<group>"; };
+		A576D5AC2BC0537C00426982 /* HttpRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestService.swift; sourceTree = "<group>"; };
+		A576D5AF2BC0562D00426982 /* HttpRequestServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestServiceDelegate.swift; sourceTree = "<group>"; };
 		A580AB9D2BAC2160005E1F27 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A5C04AD82BC1177F00654576 /* TunnelConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelConstants.swift; sourceTree = "<group>"; };
 		A5DE90D62C5B55950088315E /* ConfigurationOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationOptionsViewModel.swift; sourceTree = "<group>"; };
@@ -166,19 +144,11 @@
 		128A221D2B4431AF00FFD13D /* ZscalerSDKSampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				FC4229C62CC7B99300AB102C /* EventLogs */,
-				A5DE90D52C5B55880088315E /* ConfigurationOptions */,
-				A576D5AE2BC0561C00426982 /* Client */,
-				A569BD7D2C4E71C900DFBD0A /* CrashlyticsService */,
-				A576D5892BC00DE000426982 /* Tunneling */,
-				A576D5852BBFFDA700426982 /* Logging */,
-				A576D5802BBFFC2A00426982 /* Loading */,
 				128A221E2B4431AF00FFD13D /* AppDelegate.swift */,
 				128A22202B4431AF00FFD13D /* SceneDelegate.swift */,
-				128A22222B4431AF00FFD13D /* ViewController.swift */,
-				128A22242B4431AF00FFD13D /* Main.storyboard */,
+				336D25DF2DB068AB004E1D2A /* Views */,
+				336D25DE2DB068A3004E1D2A /* Services */,
 				128A222A2B4431B100FFD13D /* Assets.xcassets */,
-				128A222C2B4431B100FFD13D /* LaunchScreen.storyboard */,
 				A56799D02C4FFD08007C68D2 /* GoogleService-Info.plist */,
 				128A222F2B4431B100FFD13D /* Info.plist */,
 				FC69F85B2C6A207E00642902 /* secrets.json */,
@@ -211,6 +181,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		336D25DE2DB068A3004E1D2A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A576D5AE2BC0561C00426982 /* HttpRequest */,
+				A569BD7D2C4E71C900DFBD0A /* CrashlyticsService */,
+				A576D5892BC00DE000426982 /* Tunneling */,
+				A576D5852BBFFDA700426982 /* Logging */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		336D25DF2DB068AB004E1D2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				128A222C2B4431B100FFD13D /* LaunchScreen.storyboard */,
+				128A22242B4431AF00FFD13D /* Main.storyboard */,
+				128A22222B4431AF00FFD13D /* ViewController.swift */,
+				FC4229C62CC7B99300AB102C /* EventLogs */,
+				A5DE90D52C5B55880088315E /* ConfigurationOptions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A569BD7D2C4E71C900DFBD0A /* CrashlyticsService */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,98 +212,32 @@
 			path = CrashlyticsService;
 			sourceTree = "<group>";
 		};
-		A576D5802BBFFC2A00426982 /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				A576D59F2BC015A000426982 /* LoadingViewable.swift */,
-			);
-			path = Loading;
-			sourceTree = "<group>";
-		};
-		A576D5832BBFFD9500426982 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A576D5792BBFC21200426982 /* LoggingPresenting.swift */,
-				A576D57B2BBFC24100426982 /* LoggingPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		A576D5852BBFFDA700426982 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
-				A576D57D2BBFF8BA00426982 /* LoggingService.swift */,
-				A576D5882BBFFDE600426982 /* Model */,
-				A576D5832BBFFD9500426982 /* Presenter */,
+				A576D5812BBFFC3500426982 /* LoggingServiceDelegate.swift */,
+				A576D57B2BBFC24100426982 /* LoggingService.swift */,
 			);
 			path = Logging;
-			sourceTree = "<group>";
-		};
-		A576D5882BBFFDE600426982 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A576D5812BBFFC3500426982 /* LoggingViewable.swift */,
-				A576D5862BBFFDE200426982 /* ZscalerLogModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		A576D5892BC00DE000426982 /* Tunneling */ = {
 			isa = PBXGroup;
 			children = (
-				A576D5952BC00ED900426982 /* TunnelingService.swift */,
-				A576D58A2BC00DEE00426982 /* TunnelingViewable.swift */,
-				A576D58E2BC00E4D00426982 /* Model */,
-				A576D5992BC0111700426982 /* Presenter */,
+				A576D5952BC00ED900426982 /* TunnelService.swift */,
+				A576D58A2BC00DEE00426982 /* TunnelServiceDelegate.swift */,
+				A5C04AD82BC1177F00654576 /* TunnelConstants.swift */,
 			);
 			path = Tunneling;
 			sourceTree = "<group>";
 		};
-		A576D58E2BC00E4D00426982 /* Model */ = {
+		A576D5AE2BC0561C00426982 /* HttpRequest */ = {
 			isa = PBXGroup;
 			children = (
-				A576D58F2BC00E6600426982 /* TunnelRequest.swift */,
-				A576D5932BC00EAE00426982 /* TunnelResponse.swift */,
-				A5C04AD82BC1177F00654576 /* TunnelConstants.swift */,
+				A576D5AF2BC0562D00426982 /* HttpRequestServiceDelegate.swift */,
+				A576D5AC2BC0537C00426982 /* HttpRequestService.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A576D5992BC0111700426982 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A576D59B2BC0112F00426982 /* TunnelPresenting.swift */,
-				A576D59D2BC0113900426982 /* TunnelPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A576D5A42BC04DC600426982 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A576D5A52BC04DDB00426982 /* BrowserResponse.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A576D5A92BC0536600426982 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A576D5AA2BC0537300426982 /* ClientPresenting.swift */,
-				A576D5AC2BC0537C00426982 /* ClientPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A576D5AE2BC0561C00426982 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				A576D5A22BC019A300426982 /* HttpService.swift */,
-				A576D5AF2BC0562D00426982 /* BrowserViewable.swift */,
-				A576D5A42BC04DC600426982 /* Model */,
-				A576D5A92BC0536600426982 /* Presenter */,
-			);
-			path = Client;
+			path = HttpRequest;
 			sourceTree = "<group>";
 		};
 		A5DE90D52C5B55880088315E /* ConfigurationOptions */ = {
@@ -515,30 +442,19 @@
 			files = (
 				A5DE90D82C5B55950088315E /* ConfigurationOptionsViewModel.swift in Sources */,
 				128A22232B4431AF00FFD13D /* ViewController.swift in Sources */,
-				A576D5A02BC015A000426982 /* LoadingViewable.swift in Sources */,
-				A576D57C2BBFC24100426982 /* LoggingPresenter.swift in Sources */,
-				A576D57A2BBFC21200426982 /* LoggingPresenting.swift in Sources */,
-				A576D5AB2BC0537300426982 /* ClientPresenting.swift in Sources */,
+				A576D57C2BBFC24100426982 /* LoggingService.swift in Sources */,
 				A569BD7F2C4E71DE00DFBD0A /* CrashlyticsService.swift in Sources */,
 				FC4229C52CC7B19E00AB102C /* EventLogsView.swift in Sources */,
 				128A221F2B4431AF00FFD13D /* AppDelegate.swift in Sources */,
 				128A22212B4431AF00FFD13D /* SceneDelegate.swift in Sources */,
-				A576D57E2BBFF8BA00426982 /* LoggingService.swift in Sources */,
-				A576D5A62BC04DDB00426982 /* BrowserResponse.swift in Sources */,
-				A576D5B02BC0562D00426982 /* BrowserViewable.swift in Sources */,
-				A576D5A32BC019A300426982 /* HttpService.swift in Sources */,
-				A576D5962BC00ED900426982 /* TunnelingService.swift in Sources */,
-				A576D5822BBFFC3500426982 /* LoggingViewable.swift in Sources */,
+				A576D5B02BC0562D00426982 /* HttpRequestServiceDelegate.swift in Sources */,
+				A576D5962BC00ED900426982 /* TunnelService.swift in Sources */,
+				A576D5822BBFFC3500426982 /* LoggingServiceDelegate.swift in Sources */,
 				A5DE90DB2C5B559A0088315E /* ConfigurationOptions.swift in Sources */,
-				A576D5902BC00E6600426982 /* TunnelRequest.swift in Sources */,
-				A576D5942BC00EAE00426982 /* TunnelResponse.swift in Sources */,
-				A576D5AD2BC0537C00426982 /* ClientPresenter.swift in Sources */,
+				A576D5AD2BC0537C00426982 /* HttpRequestService.swift in Sources */,
 				A5DE90D92C5B55950088315E /* ConfigurationOptionsView.swift in Sources */,
 				A5C04AD92BC1177F00654576 /* TunnelConstants.swift in Sources */,
-				A576D59C2BC0112F00426982 /* TunnelPresenting.swift in Sources */,
-				A576D5872BBFFDE200426982 /* ZscalerLogModel.swift in Sources */,
-				A576D59E2BC0113900426982 /* TunnelPresenter.swift in Sources */,
-				A576D58B2BC00DEE00426982 /* TunnelingViewable.swift in Sources */,
+				A576D58B2BC00DEE00426982 /* TunnelServiceDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,15 +6,35 @@
 	<dict>
 		<key>Headers/Zscaler-Swift.h</key>
 		<data>
-		cGVQp7+/ekO5lAOe6rt5HIUG9ps=
+		wGDDHQD4vGEjQ6X5OuXjVKnWmuU=
 		</data>
 		<key>Headers/Zscaler.h</key>
 		<data>
-		Haz3YYLM6JV2yzduUmXozYPvefI=
+		CKHfguS2gysXiEUowOBG1jX0PLQ=
+		</data>
+		<key>Headers/ZscalerSDKErrorCode.h</key>
+		<data>
+		Zd9JZN5rAawomLUDkcZs1t290Us=
+		</data>
+		<key>Headers/ZscalerSDKNotification.h</key>
+		<data>
+		SVOFDOpyjATjYNVNdqyYtH+JBVo=
+		</data>
+		<key>Headers/ZscalerSDKProxyInfo.h</key>
+		<data>
+		odjmdiJHVUcW3GyshXfFIOo3B2c=
+		</data>
+		<key>Headers/ZscalerSDKTunnelStatus.h</key>
+		<data>
+		sjKPahE1mX29LwjQc28BBgBVOps=
+		</data>
+		<key>Headers/ZscalerSDKTunnelType.h</key>
+		<data>
+		q2UDIN7RgnI4pb77i9l3TCQ3Dms=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		UG7a7tj3BeEVcr5ig6iFSQREGL0=
+		wErLJ/+UjGOeZaf9oEp+Hw3HHUs=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -22,19 +42,19 @@
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		E4crFfJRiqShMolLhwz70fLL1Bw=
+		iYJqGGgCkga6PEaTwqkyHkHI/lo=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		XemS22P88TQzIfibP9YLzLeAGuc=
+		1BNtT2TM6MtDXHGKKYTyP4jfT4c=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		E4crFfJRiqShMolLhwz70fLL1Bw=
+		iYJqGGgCkga6PEaTwqkyHkHI/lo=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		UxeXQcEUjkCRrRYRVIPLZdJWu9c=
+		KdMtctydTIOiSTGFBEy3E25gFGA=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -42,19 +62,19 @@
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		0xoINXAawQpwMJDnX2bEmxfFBcg=
+		QhbO1sPV1iFDpvPiZst9s5A/YQE=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		B0njkOkspFjWbnAWh7Llz0/j03c=
+		AIaAWsy56H9Je2Fzqtv4TFuL24w=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		0xoINXAawQpwMJDnX2bEmxfFBcg=
+		QhbO1sPV1iFDpvPiZst9s5A/YQE=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		JNy0Yx9sUz2Vg+dMKn82JcFJ6UI=
+		uBeV0HTVRVeBnJfu9hp10JOCk1o=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,14 +87,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8WCOtgKjwNgrSY1aAlGfwx2hlTxLmGAKnlzHz0bfj8U=
+			H21drVZC5PxaW86vFozphE4yiRCXfWg6VNhXK/UFS2M=
 			</data>
 		</dict>
 		<key>Headers/Zscaler.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nQMS85GDgtP6xUCn41BN9DCm9R1L+b3kYE/244q973w=
+			Qa3muDSLaKVSm5JCgzf1emr6XS+O8OyiXW0YzoKPXOs=
+			</data>
+		</dict>
+		<key>Headers/ZscalerSDKErrorCode.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3t48nKCR6zG325c5+yHDbBPE0DAWf5JwOfLFcJUJr2I=
+			</data>
+		</dict>
+		<key>Headers/ZscalerSDKNotification.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cMcIt8368yUHPIsgUlMADkStw+dN0Imdk+GdVQAXiGA=
+			</data>
+		</dict>
+		<key>Headers/ZscalerSDKProxyInfo.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			O1Mj8wwM0V8X+hloQOpdsSZEKslDGcPCTxbt1DMLOn4=
+			</data>
+		</dict>
+		<key>Headers/ZscalerSDKTunnelStatus.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fgdmIDgUd6pSzgqti1QL7YmHKPAVrysBsSOb4qASZnc=
+			</data>
+		</dict>
+		<key>Headers/ZscalerSDKTunnelType.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			H2yF5iZXoyeLpA3sLPxtS+CmnRlCZmZLYZb9VUW7/EA=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -88,28 +143,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			++FPjcWFylWucb3gERZDp2D1Zi8mZ+uqQpsuS59jRqs=
+			01XgzNRppt0L9leCDznsoFIwzu5VEDE6AOwyDo5oFPo=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nxpfxV1KeAtgCR7Ttj5vQr0XgTqqVyLSLLNcEl2GCt4=
+			wfVpYxQTofkFMfdTr0YQ9bjZt4imJpuDkTyKy3gZJGk=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			++FPjcWFylWucb3gERZDp2D1Zi8mZ+uqQpsuS59jRqs=
+			01XgzNRppt0L9leCDznsoFIwzu5VEDE6AOwyDo5oFPo=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7MVqC8Qk3S8onRj1Zf/5xdD6MydYpygLyVrLB7f9NGs=
+			xjEtTIg9aXs7rIcwY12t8cEYyk/hH2kH/7+9EBf0vG4=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -123,28 +178,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/a7s1HA6Z10lSujcONz0Qlrv6CYi8n1fkN2UrJEmTOw=
+			/o0g+vtksGblMuQM/O5ZpleflIVMyHlLHwbkNSVMU5I=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4H9/UDsIdys/sMtHv1eEgw162/TMI9Gvxi6OcUP5Pg8=
+			LiHfqkN1vpnkBWRYyWgLXBQuf84P1NcoFOQhN4rDWwE=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/a7s1HA6Z10lSujcONz0Qlrv6CYi8n1fkN2UrJEmTOw=
+			/o0g+vtksGblMuQM/O5ZpleflIVMyHlLHwbkNSVMU5I=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tUTWcZjII33eZUdNWgOXI7hnHQ26tax4oG5fpL+U8XA=
+			Ghoxnn0wiEoCbQcAU+pRDalwCl6trjg0uYMm1Q/dEXM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
