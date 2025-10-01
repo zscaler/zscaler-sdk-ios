@@ -491,7 +491,7 @@ extension ViewController: HttpRequestServiceDelegate {
 extension ViewController {
     func startPreLoginTunnel() {
         if let appKey = appKeyTextField.text {
-            tunnelService.startPreLoginTunnel(appKey: appKey, deviceId: TunnelConstants.deviceUUID())
+            tunnelService.startPreLoginTunnel(appKey: appKey, deviceId: AppConstants.shared.deviceUUID())
         }
     }
 
@@ -509,7 +509,7 @@ extension ViewController {
            let accessToken = accessTokenTextField.text {
             tunnelService.startZeroTrustTunnel(
                 appKey: appKey,
-                deviceId: TunnelConstants.deviceUUID(),
+                deviceId: AppConstants.shared.deviceUUID(),
                 accessToken: accessToken
             )
         }
@@ -517,11 +517,11 @@ extension ViewController {
 
 
     func appKeyBase64String() {
-        appKeyTextField.text = TunnelConstants.appKey()
+        appKeyTextField.text = AppConstants.shared.appKey()
     }
 
     func zeroTrustAccessToken() {
-        accessTokenTextField.text = TunnelConstants.accessToken()
+        accessTokenTextField.text = AppConstants.shared.accessToken()
     }
 }
 

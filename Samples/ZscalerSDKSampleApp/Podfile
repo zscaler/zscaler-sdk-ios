@@ -7,5 +7,10 @@ target 'ZscalerSDKSampleApp' do
   use_frameworks!
   pod 'Firebase/Crashlytics'
   pod 'ZscalerSDK', :path => '../../'
-end
 
+  target 'ZscalerSDKSampleAppTests' do
+  end
+
+  target 'ZscalerSDKSampleAppUITests' do
+  end
+end

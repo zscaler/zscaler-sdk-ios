@@ -3,6 +3,7 @@
 #define ZscalerSDKErrorCode_h
 
 #import <Foundation/Foundation.h>
+#import <Zscaler/ZscalerSDKAttributes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -11,118 +12,118 @@ FOUNDATION_EXPORT NSErrorDomain const ZscalerSDKErrorDomain;
 typedef NSInteger ZscalerSDKErrorCode NS_TYPED_EXTENSIBLE_ENUM;
 
 /// An unknown error occured
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeUnknown;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeUnknown;
 
 /// An input parameter was invalid
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeInvalidParameter;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeInvalidParameter;
 
 /// There was no network when starting the tunnel
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeNoNetwork;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeNoNetwork;
 
 /// There was a timeout error
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTimeOut;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTimeOut;
 
 /// There was a DNS error
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeDnsFailure;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeDnsFailure;
 
 /// There was an error starting the tunnel
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTunnelError;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTunnelError;
 
 /// Permission to start the tunnel was denied
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodePermissionDenied;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodePermissionDenied;
 
 /// Tunnel already running
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTunnelAlreadyRunning;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTunnelAlreadyRunning;
 
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTunnelStartPendingInSDK;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTunnelStartPendingInSDK;
 
 /// Connection with Broker was successful, but authentication failed due to configuration error.
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTunnelAuthenticationFailed;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTunnelAuthenticationFailed;
 
 /// Connection with Broker was terminated unexpectedly while attempting to upgrade, resulting in tunnel disconnection.
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeConnectionTerminatedWhileUpgrading;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeConnectionTerminatedWhileUpgrading;
 
 /// Tunnel upgrade to ZeroTrust tunnel failed due to an unexpected error.
 /// The PreLogin tunnel remains active to ensure continued connectivity.
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTunnelUpgradeFailed;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTunnelUpgradeFailed;
 
 
 #pragma mark OneIdErrors
 
 /// Failed to sign CSR
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeCsrSignFailure;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeCsrSignFailure;
 
 /// Invalid tenant name
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeInvalidTenantName;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeInvalidTenantName;
 
 /// No ZPA Service is registered
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeNoZpaService;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeNoZpaService;
 
 /// No ZPA Service is registered
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeMultipleZpaService;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeMultipleZpaService;
 
 /// Failed to Revoke Certificate
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeRevokeCertFailed;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeRevokeCertFailed;
 
 /// Token Config not found for given  tenant
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTokenConfigNotFound;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTokenConfigNotFound;
 
 /// Failure parsing jwk
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeJwkParseFailed;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeJwkParseFailed;
 
 /// Customers Public Key Info is not present
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeCustomerKeyNotPresent;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeCustomerKeyNotPresent;
 
 /// Failure parsing customer Key
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeCustomerKeyParseFailed;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeCustomerKeyParseFailed;
 
 /// Unsupported Key Type
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeUnsupportedKeyType;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeUnsupportedKeyType;
 
 /// Failed to verify token signature
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeFailedSignatureValidation;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeFailedSignatureValidation;
 
 /// Token is expired
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTokenExpired;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTokenExpired;
 
 /// Failed to validate token
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTokenValidationFailed;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTokenValidationFailed;
 
 /// Failed to validate token claim(s)
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeTokenClaimValidationFailed;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeTokenClaimValidationFailed;
 
 /// Property certificate_id is missing from oauth2 client
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeMissingCertificateIdOauth2Client;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeMissingCertificateIdOauth2Client;
 
 /// Private Key is missing from oauth2 client
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeMissingPrivateKeyOAuth2Client;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeMissingPrivateKeyOAuth2Client;
 
 /// Failure generating Client Assertion
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeFailureGeneratingClientAssertion;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeFailureGeneratingClientAssertion;
 
 /// Failure generating SAML Assertion
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeFailureGeneratingSamlAssertion;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeFailureGeneratingSamlAssertion;
 
 /// Failure signing SAML Assertion
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeFailureSigningSamlAssertion;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeFailureSigningSamlAssertion;
 
 /// Failure serializing SAML Assertion
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeFailureSerializingSamlAssertion;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeFailureSerializingSamlAssertion;
 
 /// Property certificate_id is missing from saml config
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeMissingCertificateIdSamlConfig;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeMissingCertificateIdSamlConfig;
 
 /// Only JWT Tokens are supported
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeUnsupportedCustomerTokenType;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeUnsupportedCustomerTokenType;
 
 /// Failed to Fetch HMAC Secret from ZPA
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeHmacSecretFailed;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeHmacSecretFailed;
 
 /// Failed to validate HMAC payload
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeHmacValidationFailed;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeHmacValidationFailed;
 
 /// Missing sub in the Access Token
-extern const ZscalerSDKErrorCode ZscalerSDKErrorCodeMissingSubInAccessToken;
+ZSDK_EXTERN ZscalerSDKErrorCode const ZscalerSDKErrorCodeMissingSubInAccessToken;
 
 NS_ASSUME_NONNULL_END
 

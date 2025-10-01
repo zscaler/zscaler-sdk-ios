@@ -1,8 +1,10 @@
 
 #import <Foundation/Foundation.h>
+#import <Zscaler/ZscalerSDKAttributes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+ZSDK_PUBLIC
 @interface ZscalerSDKProxyInfo: NSObject
 
 - (instancetype)init NS_UNAVAILABLE;

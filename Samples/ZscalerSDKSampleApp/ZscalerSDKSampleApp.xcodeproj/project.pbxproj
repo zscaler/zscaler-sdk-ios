@@ -3,34 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		128A221F2B4431AF00FFD13D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A221E2B4431AF00FFD13D /* AppDelegate.swift */; };
-		128A22212B4431AF00FFD13D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A22202B4431AF00FFD13D /* SceneDelegate.swift */; };
-		128A22232B4431AF00FFD13D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A22222B4431AF00FFD13D /* ViewController.swift */; };
-		128A22262B4431AF00FFD13D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128A22242B4431AF00FFD13D /* Main.storyboard */; };
-		128A222B2B4431B100FFD13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128A222A2B4431B100FFD13D /* Assets.xcassets */; };
-		128A222E2B4431B100FFD13D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128A222C2B4431B100FFD13D /* LaunchScreen.storyboard */; };
-		128A22392B4431B200FFD13D /* ZscalerSDKSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A22382B4431B200FFD13D /* ZscalerSDKSampleAppTests.swift */; };
-		128A22432B4431B200FFD13D /* ZscalerSDKSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A22422B4431B200FFD13D /* ZscalerSDKSampleAppUITests.swift */; };
-		128A22452B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A22442B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift */; };
-		A56799D12C4FFD08007C68D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56799D02C4FFD08007C68D2 /* GoogleService-Info.plist */; };
-		A569BD7F2C4E71DE00DFBD0A /* CrashlyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569BD7E2C4E71DE00DFBD0A /* CrashlyticsService.swift */; };
-		A576D57C2BBFC24100426982 /* LoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D57B2BBFC24100426982 /* LoggingService.swift */; };
-		A576D5822BBFFC3500426982 /* LoggingServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5812BBFFC3500426982 /* LoggingServiceDelegate.swift */; };
-		A576D58B2BC00DEE00426982 /* TunnelServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D58A2BC00DEE00426982 /* TunnelServiceDelegate.swift */; };
-		A576D5962BC00ED900426982 /* TunnelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5952BC00ED900426982 /* TunnelService.swift */; };
-		A576D5AD2BC0537C00426982 /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5AC2BC0537C00426982 /* HttpRequestService.swift */; };
-		A576D5B02BC0562D00426982 /* HttpRequestServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576D5AF2BC0562D00426982 /* HttpRequestServiceDelegate.swift */; };
 		A580AB9E2BAC2160005E1F27 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A580AB9D2BAC2160005E1F27 /* WebKit.framework */; };
-		A5C04AD92BC1177F00654576 /* TunnelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C04AD82BC1177F00654576 /* TunnelConstants.swift */; };
-		A5DE90D82C5B55950088315E /* ConfigurationOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE90D62C5B55950088315E /* ConfigurationOptionsViewModel.swift */; };
-		A5DE90D92C5B55950088315E /* ConfigurationOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE90D72C5B55950088315E /* ConfigurationOptionsView.swift */; };
-		A5DE90DB2C5B559A0088315E /* ConfigurationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE90DA2C5B559A0088315E /* ConfigurationOptions.swift */; };
-		FC4229C52CC7B19E00AB102C /* EventLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4229C42CC7B19900AB102C /* EventLogsView.swift */; };
-		FC69F85C2C6A207E00642902 /* secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = FC69F85B2C6A207E00642902 /* secrets.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,34 +42,54 @@
 
 /* Begin PBXFileReference section */
 		128A221B2B4431AF00FFD13D /* ZscalerSDKSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZscalerSDKSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		128A221E2B4431AF00FFD13D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		128A22202B4431AF00FFD13D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		128A22222B4431AF00FFD13D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		128A22252B4431AF00FFD13D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		128A222A2B4431B100FFD13D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		128A222D2B4431B100FFD13D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		128A222F2B4431B100FFD13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		128A22342B4431B200FFD13D /* ZscalerSDKSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZscalerSDKSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		128A22382B4431B200FFD13D /* ZscalerSDKSampleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZscalerSDKSampleAppTests.swift; sourceTree = "<group>"; };
 		128A223E2B4431B200FFD13D /* ZscalerSDKSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZscalerSDKSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		128A22422B4431B200FFD13D /* ZscalerSDKSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZscalerSDKSampleAppUITests.swift; sourceTree = "<group>"; };
-		128A22442B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZscalerSDKSampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A56799D02C4FFD08007C68D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A569BD7E2C4E71DE00DFBD0A /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
-		A576D57B2BBFC24100426982 /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
-		A576D5812BBFFC3500426982 /* LoggingServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingServiceDelegate.swift; sourceTree = "<group>"; };
-		A576D58A2BC00DEE00426982 /* TunnelServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelServiceDelegate.swift; sourceTree = "<group>"; };
-		A576D5952BC00ED900426982 /* TunnelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelService.swift; sourceTree = "<group>"; };
-		A576D5AC2BC0537C00426982 /* HttpRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestService.swift; sourceTree = "<group>"; };
-		A576D5AF2BC0562D00426982 /* HttpRequestServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestServiceDelegate.swift; sourceTree = "<group>"; };
+		33DA88932E4E4FB700A92DF1 /* Zscaler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Zscaler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A580AB9D2BAC2160005E1F27 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		A5C04AD82BC1177F00654576 /* TunnelConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelConstants.swift; sourceTree = "<group>"; };
-		A5DE90D62C5B55950088315E /* ConfigurationOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationOptionsViewModel.swift; sourceTree = "<group>"; };
-		A5DE90D72C5B55950088315E /* ConfigurationOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationOptionsView.swift; sourceTree = "<group>"; };
-		A5DE90DA2C5B559A0088315E /* ConfigurationOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationOptions.swift; sourceTree = "<group>"; };
-		FC4229C42CC7B19900AB102C /* EventLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLogsView.swift; sourceTree = "<group>"; };
-		FC69F85B2C6A207E00642902 /* secrets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = secrets.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		33D705392E40EE97004EE721 /* Exceptions for "ZscalerSDKSampleApp" folder in "ZscalerSDKSampleApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 128A221A2B4431AF00FFD13D /* ZscalerSDKSampleApp */;
+		};
+		33DA9C232E4E65AE00A92DF1 /* Exceptions for "ZscalerSDKSampleApp" folder in "ZscalerSDKSampleAppUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Services/AppConstants.swift,
+			);
+			target = 128A223D2B4431B200FFD13D /* ZscalerSDKSampleAppUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		33D705212E40EE97004EE721 /* ZscalerSDKSampleApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				33D705392E40EE97004EE721 /* Exceptions for "ZscalerSDKSampleApp" folder in "ZscalerSDKSampleApp" target */,
+				33DA9C232E4E65AE00A92DF1 /* Exceptions for "ZscalerSDKSampleApp" folder in "ZscalerSDKSampleAppUITests" target */,
+			);
+			path = ZscalerSDKSampleApp;
+			sourceTree = "<group>";
+		};
+		33D705402E40F0B6004EE721 /* ZscalerSDKSampleAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = ZscalerSDKSampleAppTests;
+			sourceTree = "<group>";
+		};
+		33D705442E40F0B8004EE721 /* ZscalerSDKSampleAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = ZscalerSDKSampleAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		128A22182B4431AF00FFD13D /* Frameworks */ = {
@@ -123,11 +120,12 @@
 		128A22122B4431AF00FFD13D = {
 			isa = PBXGroup;
 			children = (
-				128A221D2B4431AF00FFD13D /* ZscalerSDKSampleApp */,
-				128A22372B4431B200FFD13D /* ZscalerSDKSampleAppTests */,
-				128A22412B4431B200FFD13D /* ZscalerSDKSampleAppUITests */,
+				33D705212E40EE97004EE721 /* ZscalerSDKSampleApp */,
+				33D705402E40F0B6004EE721 /* ZscalerSDKSampleAppTests */,
+				33D705442E40F0B8004EE721 /* ZscalerSDKSampleAppUITests */,
 				128A221C2B4431AF00FFD13D /* Products */,
 				128A22512B44325500FFD13D /* Frameworks */,
+				33DA80312E4E21E900A92DF1 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,121 +139,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		128A221D2B4431AF00FFD13D /* ZscalerSDKSampleApp */ = {
-			isa = PBXGroup;
-			children = (
-				128A221E2B4431AF00FFD13D /* AppDelegate.swift */,
-				128A22202B4431AF00FFD13D /* SceneDelegate.swift */,
-				336D25DF2DB068AB004E1D2A /* Views */,
-				336D25DE2DB068A3004E1D2A /* Services */,
-				128A222A2B4431B100FFD13D /* Assets.xcassets */,
-				A56799D02C4FFD08007C68D2 /* GoogleService-Info.plist */,
-				128A222F2B4431B100FFD13D /* Info.plist */,
-				FC69F85B2C6A207E00642902 /* secrets.json */,
-			);
-			path = ZscalerSDKSampleApp;
-			sourceTree = "<group>";
-		};
-		128A22372B4431B200FFD13D /* ZscalerSDKSampleAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				128A22382B4431B200FFD13D /* ZscalerSDKSampleAppTests.swift */,
-			);
-			path = ZscalerSDKSampleAppTests;
-			sourceTree = "<group>";
-		};
-		128A22412B4431B200FFD13D /* ZscalerSDKSampleAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				128A22422B4431B200FFD13D /* ZscalerSDKSampleAppUITests.swift */,
-				128A22442B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift */,
-			);
-			path = ZscalerSDKSampleAppUITests;
-			sourceTree = "<group>";
-		};
 		128A22512B44325500FFD13D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33DA88932E4E4FB700A92DF1 /* Zscaler.framework */,
 				A580AB9D2BAC2160005E1F27 /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		336D25DE2DB068A3004E1D2A /* Services */ = {
+		33DA80312E4E21E900A92DF1 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				A576D5AE2BC0561C00426982 /* HttpRequest */,
-				A569BD7D2C4E71C900DFBD0A /* CrashlyticsService */,
-				A576D5892BC00DE000426982 /* Tunneling */,
-				A576D5852BBFFDA700426982 /* Logging */,
 			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		336D25DF2DB068AB004E1D2A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				128A222C2B4431B100FFD13D /* LaunchScreen.storyboard */,
-				128A22242B4431AF00FFD13D /* Main.storyboard */,
-				128A22222B4431AF00FFD13D /* ViewController.swift */,
-				FC4229C62CC7B99300AB102C /* EventLogs */,
-				A5DE90D52C5B55880088315E /* ConfigurationOptions */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A569BD7D2C4E71C900DFBD0A /* CrashlyticsService */ = {
-			isa = PBXGroup;
-			children = (
-				A569BD7E2C4E71DE00DFBD0A /* CrashlyticsService.swift */,
-			);
-			path = CrashlyticsService;
-			sourceTree = "<group>";
-		};
-		A576D5852BBFFDA700426982 /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-				A576D5812BBFFC3500426982 /* LoggingServiceDelegate.swift */,
-				A576D57B2BBFC24100426982 /* LoggingService.swift */,
-			);
-			path = Logging;
-			sourceTree = "<group>";
-		};
-		A576D5892BC00DE000426982 /* Tunneling */ = {
-			isa = PBXGroup;
-			children = (
-				A576D5952BC00ED900426982 /* TunnelService.swift */,
-				A576D58A2BC00DEE00426982 /* TunnelServiceDelegate.swift */,
-				A5C04AD82BC1177F00654576 /* TunnelConstants.swift */,
-			);
-			path = Tunneling;
-			sourceTree = "<group>";
-		};
-		A576D5AE2BC0561C00426982 /* HttpRequest */ = {
-			isa = PBXGroup;
-			children = (
-				A576D5AF2BC0562D00426982 /* HttpRequestServiceDelegate.swift */,
-				A576D5AC2BC0537C00426982 /* HttpRequestService.swift */,
-			);
-			path = HttpRequest;
-			sourceTree = "<group>";
-		};
-		A5DE90D52C5B55880088315E /* ConfigurationOptions */ = {
-			isa = PBXGroup;
-			children = (
-				A5DE90D72C5B55950088315E /* ConfigurationOptionsView.swift */,
-				A5DE90D62C5B55950088315E /* ConfigurationOptionsViewModel.swift */,
-				A5DE90DA2C5B559A0088315E /* ConfigurationOptions.swift */,
-			);
-			path = ConfigurationOptions;
-			sourceTree = "<group>";
-		};
-		FC4229C62CC7B99300AB102C /* EventLogs */ = {
-			isa = PBXGroup;
-			children = (
-				FC4229C42CC7B19900AB102C /* EventLogsView.swift */,
-			);
-			path = EventLogs;
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +164,6 @@
 			buildPhases = (
 				128A22172B4431AF00FFD13D /* Sources */,
 				128A22182B4431AF00FFD13D /* Frameworks */,
-				33AC00D32CEE25E70078EBDB /* Create Secrets File */,
 				128A22192B4431AF00FFD13D /* Resources */,
 				336212F02BF67D8F00A1AA38 /* Embed Frameworks */,
 				A58861312C4E866F00554987 /* Run Crashlytics */,
@@ -275,6 +171,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				33D705212E40EE97004EE721 /* ZscalerSDKSampleApp */,
 			);
 			name = ZscalerSDKSampleApp;
 			productName = ZscalerSDKSampleApp;
@@ -294,6 +193,9 @@
 			dependencies = (
 				128A22362B4431B200FFD13D /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				33D705402E40F0B6004EE721 /* ZscalerSDKSampleAppTests */,
+			);
 			name = ZscalerSDKSampleAppTests;
 			productName = ZscalerSDKSampleAppTests;
 			productReference = 128A22342B4431B200FFD13D /* ZscalerSDKSampleAppTests.xctest */;
@@ -311,6 +213,9 @@
 			);
 			dependencies = (
 				128A22402B4431B200FFD13D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				33D705442E40F0B8004EE721 /* ZscalerSDKSampleAppUITests */,
 			);
 			name = ZscalerSDKSampleAppUITests;
 			productName = ZscalerSDKSampleAppUItests;
@@ -341,7 +246,6 @@
 				};
 			};
 			buildConfigurationList = 128A22162B4431AF00FFD13D /* Build configuration list for PBXProject "ZscalerSDKSampleApp" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -349,6 +253,7 @@
 				Base,
 			);
 			mainGroup = 128A22122B4431AF00FFD13D;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 128A221C2B4431AF00FFD13D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -365,11 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A56799D12C4FFD08007C68D2 /* GoogleService-Info.plist in Resources */,
-				128A222E2B4431B100FFD13D /* LaunchScreen.storyboard in Resources */,
-				128A222B2B4431B100FFD13D /* Assets.xcassets in Resources */,
-				FC69F85C2C6A207E00642902 /* secrets.json in Resources */,
-				128A22262B4431AF00FFD13D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,26 +290,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		33AC00D32CEE25E70078EBDB /* Create Secrets File */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Create Secrets File";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SOURCE_ROOT)/$(PROJECT_NAME)/secrets.json",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -xeu\ntouch $SOURCE_ROOT/$PROJECT_NAME/secrets.json\n";
-		};
 		A58861312C4E866F00554987 /* Run Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,21 +320,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5DE90D82C5B55950088315E /* ConfigurationOptionsViewModel.swift in Sources */,
-				128A22232B4431AF00FFD13D /* ViewController.swift in Sources */,
-				A576D57C2BBFC24100426982 /* LoggingService.swift in Sources */,
-				A569BD7F2C4E71DE00DFBD0A /* CrashlyticsService.swift in Sources */,
-				FC4229C52CC7B19E00AB102C /* EventLogsView.swift in Sources */,
-				128A221F2B4431AF00FFD13D /* AppDelegate.swift in Sources */,
-				128A22212B4431AF00FFD13D /* SceneDelegate.swift in Sources */,
-				A576D5B02BC0562D00426982 /* HttpRequestServiceDelegate.swift in Sources */,
-				A576D5962BC00ED900426982 /* TunnelService.swift in Sources */,
-				A576D5822BBFFC3500426982 /* LoggingServiceDelegate.swift in Sources */,
-				A5DE90DB2C5B559A0088315E /* ConfigurationOptions.swift in Sources */,
-				A576D5AD2BC0537C00426982 /* HttpRequestService.swift in Sources */,
-				A5DE90D92C5B55950088315E /* ConfigurationOptionsView.swift in Sources */,
-				A5C04AD92BC1177F00654576 /* TunnelConstants.swift in Sources */,
-				A576D58B2BC00DEE00426982 /* TunnelServiceDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +327,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128A22392B4431B200FFD13D /* ZscalerSDKSampleAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,8 +334,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128A22452B4431B200FFD13D /* ZscalerSDKSampleAppUITestsLaunchTests.swift in Sources */,
-				128A22432B4431B200FFD13D /* ZscalerSDKSampleAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,25 +351,6 @@
 			targetProxy = 128A223F2B4431B200FFD13D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		128A22242B4431AF00FFD13D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				128A22252B4431AF00FFD13D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		128A222C2B4431B100FFD13D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				128A222D2B4431B100FFD13D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		128A22462B4431B200FFD13D /* Debug */ = {
@@ -698,11 +541,11 @@
 		128A224C2B4431B200FFD13D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PCBCQZJ7S7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zscaler.sdk.zscalersdk-ios.TestApp.Tests";
@@ -717,11 +560,11 @@
 		128A224D2B4431B200FFD13D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PCBCQZJ7S7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zscaler.sdk.zscalersdk-ios.TestApp.Tests";
@@ -736,10 +579,10 @@
 		128A224F2B4431B200FFD13D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PCBCQZJ7S7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zscaler.sdk.zscalersdk-ios.TestApp.UITests";
@@ -753,10 +596,10 @@
 		128A22502B4431B200FFD13D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PCBCQZJ7S7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zscaler.sdk.zscalersdk-ios.TestApp.UITests";

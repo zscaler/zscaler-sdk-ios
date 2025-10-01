@@ -3,17 +3,18 @@
 #define ZscalerNotificationType_h
 
 #include <Foundation/NSNotification.h>
+#import <Zscaler/ZscalerSDKAttributes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern const NSString * ZscalerSDKNotificationNameUserInfoKey;
-extern const NSString * ZscalerSDKNotificationMessageUserInfoKey;
+ZSDK_EXTERN NSString const * ZscalerSDKNotificationNameUserInfoKey;
+ZSDK_EXTERN NSString const * ZscalerSDKNotificationMessageUserInfoKey;
 
-extern const NSNotificationName ZscalerSDKTunnelDisconnected;
-extern const NSNotificationName ZscalerSDKTunnelConnected;
-extern const NSNotificationName ZscalerSDKTunnelReconnecting;
-extern const NSNotificationName ZscalerSDKTunnelAuthenticationRequired;
-extern const NSNotificationName ZscalerSDKTunnelResourceBlocked;
+ZSDK_EXTERN NSNotificationName const ZscalerSDKTunnelDisconnected;
+ZSDK_EXTERN NSNotificationName const ZscalerSDKTunnelConnected;
+ZSDK_EXTERN NSNotificationName const ZscalerSDKTunnelReconnecting;
+ZSDK_EXTERN NSNotificationName const ZscalerSDKTunnelAuthenticationRequired;
+ZSDK_EXTERN NSNotificationName const ZscalerSDKTunnelResourceBlocked;
 
 /// Indicates that ZscalerSDK has failed to set up it’s proxy. Requests using the proxy will fail.
 /// There are a few options for recovery:
@@ -26,7 +27,7 @@ extern const NSNotificationName ZscalerSDKTunnelResourceBlocked;
 ///     If using automatic configuration, invalidate and recreate <em>all</em> URLSessions.
 ///   </li>
 /// </ol>
-extern const NSNotificationName ZscalerSDKProxyStartFailed;
+ZSDK_EXTERN NSNotificationName const ZscalerSDKProxyStartFailed;
 
 
 NS_ASSUME_NONNULL_END

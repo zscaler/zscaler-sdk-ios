@@ -1,4 +1,7 @@
 import UIKit
+import OSLog
+
+let logger = Logger()
 
 @available(iOS 13.0, *)
 @main

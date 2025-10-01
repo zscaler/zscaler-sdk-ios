@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Zscaler
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -enable-bare-slash-regex -module-name Zscaler
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Combine
 import Foundation
@@ -13,6 +13,20 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@objc @objcMembers public class ZscalerSDKConfiguration : ObjectiveC.NSObject {
+  @objc public static var defaultConfiguration: Zscaler.ZscalerSDKConfiguration {
+    @objc get
+  }
+  @objc final public let automaticallyConfigureRequests: Swift.Bool
+  @objc final public let automaticallyConfigureWebviews: Swift.Bool
+  @objc final public let useProxyAuthentication: Swift.Bool
+  @objc final public let failIfDeviceCompromised: Swift.Bool
+  @objc final public let blockZPAConnectionsOnTunnelFailure: Swift.Bool
+  @objc final public let enableDebugLogsInConsole: Swift.Bool
+  @objc final public let logLevel: Zscaler.LogLevel
+  @objc public init(automaticallyConfigureRequests: Swift.Bool = false, automaticallyConfigureWebviews: Swift.Bool = false, useProxyAuthentication: Swift.Bool = false, failIfDeviceCompromised: Swift.Bool = false, blockZPAConnectionsOnTunnelFailure: Swift.Bool = false, enableDebugLogsInConsole: Swift.Bool = false, logLevel: Zscaler.LogLevel = .debug)
+  @objc deinit
+}
 @objc public enum LogLevel : Swift.Int {
   case error = 0
   case info = 1
@@ -29,20 +43,27 @@ extension Zscaler.LogLevel : Swift.CaseIterable {
     get
   }
 }
-public struct ZscalerSDKError : Swift.Error {
-  public typealias ErrorCode = Zscaler.ZscalerSDKErrorCode
-  public let code: Zscaler.ZscalerSDKError.ErrorCode
+@_inheritsConvenienceInitializers @objc public class NotificationObjectConstants : ObjectiveC.NSObject {
+  @available(*, deprecated, renamed: "ZscalerSDKNotificationNameUserInfoKey", message: "Renamed notifications for better objective-c support")
+  @objc public static let notificationNameKey: Swift.String
+  @available(*, deprecated, renamed: "ZscalerSDKNotificationMessageUserInfoKey", message: "Renamed notifications for better objective-c support")
+  @objc public static let notificationMessageKey: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
 }
-extension Zscaler.ZscalerSDKError : Foundation.CustomNSError {
-  public static var errorDomain: Swift.String {
-    get
-  }
-  public var errorCode: Swift.Int {
-    get
-  }
-  public var errorUserInfo: [Swift.String : Any] {
-    get
-  }
+@objc extension Foundation.NSNotification {
+  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelDisconnected", message: "Renamed notifications for better objective-c support")
+  @objc public static let ZscalerSDKTunnelDisconnected: Foundation.NSNotification.Name
+  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelConnected", message: "Renamed notifications for better objective-c support")
+  @objc public static let ZscalerSDKTunnelConnected: Foundation.NSNotification.Name
+  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelReconnecting", message: "Renamed notifications for better objective-c support")
+  @objc public static let ZscalerSDKTunnelReconnecting: Foundation.NSNotification.Name
+  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelAuthenticationRequired", message: "Renamed notifications for better objective-c support")
+  @objc public static let ZscalerSDKTunnelAuthenticationRequired: Foundation.NSNotification.Name
+  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelResourceBlocked", message: "Renamed notifications for better objective-c support")
+  @objc public static let ZscalerSDKTunnelResourceBlocked: Foundation.NSNotification.Name
+  @available(*, deprecated, renamed: "Name.ZscalerSDKProxyStartFailed", message: "Renamed notifications for better objective-c support")
+  @objc public static let ZscalerSDKProxyStartFailed: Foundation.NSNotification.Name
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class ZscalerSDK : ObjectiveC.NSObject {
   @objc public static func sharedInstance() -> Zscaler.ZscalerSDK
@@ -68,46 +89,25 @@ extension Zscaler.ZscalerSDKError : Foundation.CustomNSError {
   @objc public func getClientPublicIp() -> Swift.String
   @objc deinit
 }
+public struct ZscalerSDKError : Swift.Error {
+  public typealias ErrorCode = Zscaler.ZscalerSDKErrorCode
+  public let code: Zscaler.ZscalerSDKError.ErrorCode
+}
+extension Zscaler.ZscalerSDKError : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+}
 extension Zscaler.ZscalerSDKTunnelType {
   public var description: Swift.String {
     get
   }
-}
-@objc @objcMembers public class ZscalerSDKConfiguration : ObjectiveC.NSObject {
-  @objc public static var defaultConfiguration: Zscaler.ZscalerSDKConfiguration {
-    @objc get
-  }
-  @objc final public let automaticallyConfigureRequests: Swift.Bool
-  @objc final public let automaticallyConfigureWebviews: Swift.Bool
-  @objc final public let useProxyAuthentication: Swift.Bool
-  @objc final public let failIfDeviceCompromised: Swift.Bool
-  @objc final public let blockZPAConnectionsOnTunnelFailure: Swift.Bool
-  @objc final public let enableDebugLogsInConsole: Swift.Bool
-  @objc final public let logLevel: Zscaler.LogLevel
-  @objc public init(automaticallyConfigureRequests: Swift.Bool = false, automaticallyConfigureWebviews: Swift.Bool = false, useProxyAuthentication: Swift.Bool = false, failIfDeviceCompromised: Swift.Bool = false, blockZPAConnectionsOnTunnelFailure: Swift.Bool = false, enableDebugLogsInConsole: Swift.Bool = false, logLevel: Zscaler.LogLevel = .debug)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc public class NotificationObjectConstants : ObjectiveC.NSObject {
-  @available(*, deprecated, renamed: "ZscalerSDKNotificationNameUserInfoKey", message: "Renamed notifications for better objective-c support")
-  @objc public static let notificationNameKey: Swift.String
-  @available(*, deprecated, renamed: "ZscalerSDKNotificationMessageUserInfoKey", message: "Renamed notifications for better objective-c support")
-  @objc public static let notificationMessageKey: Swift.String
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc extension Foundation.NSNotification {
-  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelDisconnected", message: "Renamed notifications for better objective-c support")
-  @objc public static let ZscalerSDKTunnelDisconnected: Foundation.NSNotification.Name
-  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelConnected", message: "Renamed notifications for better objective-c support")
-  @objc public static let ZscalerSDKTunnelConnected: Foundation.NSNotification.Name
-  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelReconnecting", message: "Renamed notifications for better objective-c support")
-  @objc public static let ZscalerSDKTunnelReconnecting: Foundation.NSNotification.Name
-  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelAuthenticationRequired", message: "Renamed notifications for better objective-c support")
-  @objc public static let ZscalerSDKTunnelAuthenticationRequired: Foundation.NSNotification.Name
-  @available(*, deprecated, renamed: "Name.ZscalerSDKTunnelResourceBlocked", message: "Renamed notifications for better objective-c support")
-  @objc public static let ZscalerSDKTunnelResourceBlocked: Foundation.NSNotification.Name
-  @available(*, deprecated, renamed: "Name.ZscalerSDKProxyStartFailed", message: "Renamed notifications for better objective-c support")
-  @objc public static let ZscalerSDKProxyStartFailed: Foundation.NSNotification.Name
 }
 extension Zscaler.LogLevel : Swift.Equatable {}
 extension Zscaler.LogLevel : Swift.Hashable {}

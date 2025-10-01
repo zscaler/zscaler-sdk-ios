@@ -1,5 +1,6 @@
 import XCTest
 @testable import ZscalerSDKSampleApp
+import Zscaler
 
 final class ZscalerSDKSampleAppTests: XCTestCase {
 

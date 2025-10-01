@@ -39,6 +39,11 @@
                BlueprintName = "ZscalerSDKSampleAppTests"
                ReferencedContainer = "container:ZscalerSDKSampleApp.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "ZscalerSDKSampleAppTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO"
