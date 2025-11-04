@@ -17,24 +17,41 @@ func waitForExpectation(_ element: XCUIElement, exists: Bool = true, timeout: Ti
 }
 
 extension XCUIElement {
-    func clearText() {
+    func clearText(app: XCUIApplication) {
         guard self.exists && self.isHittable else { return }
         self.tap()
-        if let text = self.value as? String {
-            let deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: text.count)
-            self.typeText(deleteString)
-        } else {
-            let fallbackDelete = String(repeating: XCUIKeyboardKey.delete.rawValue, count: 100)
-            self.typeText(fallbackDelete)
-        }
+        
+        self.typeText(XCUIKeyboardKey.delete.rawValue)
     }
 }
 
-func startTunnel(_ switchElement: XCUIElement, connectedLabel: String, app: XCUIApplication) {
+
+func enterCredentials(appKey: String, accessToken: String? = nil, app: XCUIApplication) {
+    app.buttons["Tunnel"].tap()
+
+    let appKeyField = app.textFields["Enter App Key"]
+    appKeyField.tap()
+    appKeyField.typeText(XCUIKeyboardKey.delete.rawValue)
+    appKeyField.typeText(appKey)
+    
+    if let accessToken = accessToken {
+        let accessTokenField = app.textFields["Enter Access Token"]
+        accessTokenField.tap()
+        accessTokenField.typeText(XCUIKeyboardKey.delete.rawValue)
+        accessTokenField.typeText(accessToken)
+    }
+
+    app.buttons["Done"].tap()
+}
+
+
+func startTunnel(_ switchElement: XCUIElement, alertText: String, app: XCUIApplication) {
+    app.buttons["Tunnel"].tap()
+    
     XCTAssertTrue(switchElement.exists)
     switchElement.tap()
 
-    let tunnelConnectedLabel = app.staticTexts[connectedLabel]
+    let tunnelConnectedLabel = app.staticTexts[alertText]
     waitForExpectation(tunnelConnectedLabel, exists: true, timeout: 10)
 
     let okButton = app.alerts.firstMatch.buttons["OK"]
@@ -43,6 +60,8 @@ func startTunnel(_ switchElement: XCUIElement, connectedLabel: String, app: XCUI
 }
 
 func stopTunnel(_ switchElement: XCUIElement, disconnectedLabel: String, app: XCUIApplication) {
+    app.buttons["Tunnel"].tap()
+
     XCTAssertTrue(switchElement.exists)
     switchElement.tap()
 
@@ -53,25 +72,34 @@ func stopTunnel(_ switchElement: XCUIElement, disconnectedLabel: String, app: XC
     okButton.tap()
 }
 
-func UrlAccess(url: String, expectedMethod: String, expectedUrl: String, expectedArgs: String, app: XCUIApplication) throws {
-    let urlTextField = app.textFields["browser_url_text_field"]
+func performRequest(url: String, expectedMethod: String, expectedUrl: String, expectedArgs: String, app: XCUIApplication) throws {    app.buttons["Request"].tap()
+
+    let urlTextField = app.textFields["Enter URL"]
     XCTAssertTrue(urlTextField.waitForExistence(timeout: 5), "URL text field not found")
     urlTextField.tap()
-    urlTextField.clearText()
+    sleep(1)
+    urlTextField.tap()
+    sleep(1)
+    let selectAll = app.menuItems["Select All"]
+    if selectAll.exists {
+        selectAll.tap()
+        urlTextField.typeText(XCUIKeyboardKey.delete.rawValue)
+    }
     urlTextField.typeText(url)
+    
+    app.buttons["Done"].tap()
 
     let goButton = app.buttons["go_button"]
     XCTAssertTrue(goButton.exists, "Go button not found")
     goButton.tap()
 
-    let webView = app.webViews.firstMatch
-    XCTAssertTrue(webView.waitForExistence(timeout: 10), "WebView did not appear in time")
+    let responseCode = app.staticTexts["response_code"].label
+    XCTAssertEqual(responseCode, "200")
+    
+    let body = app.staticTexts["response_body"].label
 
-    let staticTextElements = webView.staticTexts.allElementsBoundByIndex
-    let allText = staticTextElements.map { $0.label }.joined(separator: "\n")
-    print("Full WebView contents:\n\(allText)")
 
-    XCTAssertTrue(allText.contains("\"method\": \"\(expectedMethod)\""), "Expected 'method: \(expectedMethod)' not found in WebView content")
-    XCTAssertTrue(allText.contains("\"url\": \"\(expectedUrl)\""), "Expected URL not found in WebView content")
-    XCTAssertTrue(allText.contains(expectedArgs), "Expected args not found in WebView content")
+    XCTAssertTrue(body.contains("\"method\": \"\(expectedMethod)\""), "Expected 'method: \(expectedMethod)' not found in WebView content")
+    XCTAssertTrue(body.contains("\"url\": \"\(expectedUrl)\""), "Expected URL not found in WebView content")
+    XCTAssertTrue(body.contains(expectedArgs), "Expected args not found in WebView content")
 }

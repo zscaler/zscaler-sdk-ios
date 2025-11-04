@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Zscaler-Swift.h</key>
 		<data>
-		wGDDHQD4vGEjQ6X5OuXjVKnWmuU=
+		LhTsJ88OU08E2g7dKr62RGmMWaE=
 		</data>
 		<key>Headers/Zscaler.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AMfrfdGaZu7hZlbO9Uwq74hDQPk=
+		07CENL9REBNF+7SSBs6Ht8I4S+I=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -46,19 +46,19 @@
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		8zIMO0y34t9z8/mvi1VIWD9BZnU=
+		Uzj/xdG5LbcvTLtzyK+cmWabzpg=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		mCSceOznKZQfA85VCrMwerrCjNk=
+		H2RXUdggxqGMbBBn25vN8AgfWXk=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		8zIMO0y34t9z8/mvi1VIWD9BZnU=
+		Uzj/xdG5LbcvTLtzyK+cmWabzpg=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		IC4ehfRKxHkWWZGNb9Nfa+MjRSI=
+		mlaA/Ei3NdIDaCX8L/ckWFVZT4s=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -66,19 +66,19 @@
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		0wYT27CNRvwLG9BJJryyK/w+Pjw=
+		CTHHv5QBbwrYo/3JjYu7qEzjZAU=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		NEKmywFgjFYLoEQuoeoFkYKY454=
+		NVhmGa+UzUu/yAhp+p6LuwWBAU0=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		0wYT27CNRvwLG9BJJryyK/w+Pjw=
+		CTHHv5QBbwrYo/3JjYu7qEzjZAU=
 		</data>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QhI5fBN8JLeN9/6vHWXDIwf6kII=
+		wo46a1vcxgJoU35W2/8N4tg6IMQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Protobuf-C++_Privacy.bundle/Info.plist</key>
 		<data>
-		6Hn/HB6GbnnBBkmwBD3f5xRTVgc=
+		7BXf6X71IbH69+79NlhInKHTLgw=
 		</data>
 		<key>Protobuf-C++_Privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -99,7 +99,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			H21drVZC5PxaW86vFozphE4yiRCXfWg6VNhXK/UFS2M=
+			DKTxD5IN8ShTbSp+MRyWXFevoyDvvyr9LddahZvxAZI=
 			</data>
 		</dict>
 		<key>Headers/Zscaler.h</key>
@@ -162,28 +162,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VNYrkD4z5LCPHvdlvTTB/4TUHP1THQbApHNR2sHI3Ug=
+			c5D6VtCNHxe+QMOmsBiy6YBXLSTN5yrvu2TCiJJ+olc=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CKbZ6niuJy/ML+FLMHrzmiZ2lOh0v3xiZ9ZeswurpOM=
+			qmeBJBICPnsay2JId7ruZn/zbzrc8rkD5XKskcPqfvk=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VNYrkD4z5LCPHvdlvTTB/4TUHP1THQbApHNR2sHI3Ug=
+			c5D6VtCNHxe+QMOmsBiy6YBXLSTN5yrvu2TCiJJ+olc=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NNniz+cQsGgFZn3ojiaoyC3/STSw5fdC7Zhq8sAQ+QQ=
+			YVmI8HQe4eyq3UUuT+3KSYSZJjYr+ZcX4C6wUOXJcRY=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -197,28 +197,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1126qvn9gXo2ZFa7R0eUDtJgtvu4e8nq4hFI3LzN+Mk=
+			NazwMe4yxjt9IVvbpfOwXYQxR/gBYoQHZqT+6H3mLJo=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BZe/uXj5g0UYGW0zfTiDEsOUR1CTd/UBXrxfqx3JkKc=
+			4dBKmBttraCKADolbZriqopP6zO02zfNmNiRrQdvXbg=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1126qvn9gXo2ZFa7R0eUDtJgtvu4e8nq4hFI3LzN+Mk=
+			NazwMe4yxjt9IVvbpfOwXYQxR/gBYoQHZqT+6H3mLJo=
 			</data>
 		</dict>
 		<key>Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			89GUVpyowbfzeQQlAJAffORcUnVqiv922eft5qqih4Y=
+			NYVydTKDYujl+iTRYsdUk4NP7v3idjmxUW3XrnuJdL4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -232,7 +232,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1rgqPEREPuWcgkRahWemsmD0zBKM6ImY6YW9yf6mRu8=
+			ek2rPEP3WEGL0xPz9byzO0LGGjrb9wxn7FmO0DHU+Ac=
 			</data>
 		</dict>
 		<key>Protobuf-C++_Privacy.bundle/PrivacyInfo.xcprivacy</key>

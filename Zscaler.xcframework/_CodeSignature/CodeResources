@@ -6,7 +6,7 @@
 	<dict>
 		<key>ios-arm64/Zscaler.framework/Headers/Zscaler-Swift.h</key>
 		<data>
-		vuReOxaib7mAqFcSOTQ19c7FyNo=
+		7d7kEfYk/KqzGJkVcGr9LW0XGe4=
 		</data>
 		<key>ios-arm64/Zscaler.framework/Headers/Zscaler.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>ios-arm64/Zscaler.framework/Info.plist</key>
 		<data>
-		fH9qBtBCGGEQnoF1puz7CdrDUQQ=
+		/yupnax47W58DbjCQK8EMk3nX5o=
 		</data>
 		<key>ios-arm64/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -46,15 +46,15 @@
 		</data>
 		<key>ios-arm64/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		Q5TU0q4KRvLnfFNh4B1mcMXI+88=
+		zo30IArI09tMPml12zfF7OhPTZk=
 		</data>
 		<key>ios-arm64/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		jpmt2jIoI8t8FN022yZg/MaeJ50=
+		8S5Il+8E1bX63iM8AhPh0kHI84c=
 		</data>
 		<key>ios-arm64/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		Q5TU0q4KRvLnfFNh4B1mcMXI+88=
+		zo30IArI09tMPml12zfF7OhPTZk=
 		</data>
 		<key>ios-arm64/Zscaler.framework/Modules/module.modulemap</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>ios-arm64/Zscaler.framework/Protobuf-C++_Privacy.bundle/Info.plist</key>
 		<data>
-		B6yI1EvuRcpS7g8Aro/mZxtbwdk=
+		itReHDgfdoHxzXiyBMgItOZZge0=
 		</data>
 		<key>ios-arm64/Zscaler.framework/Protobuf-C++_Privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -70,11 +70,11 @@
 		</data>
 		<key>ios-arm64/Zscaler.framework/Zscaler</key>
 		<data>
-		7jt0oOqAWCEDZLO3ZROsu7ihRPA=
+		f5B+MtluMe0TqUpwvwdsjDnR9fU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/Zscaler-Swift.h</key>
 		<data>
-		wGDDHQD4vGEjQ6X5OuXjVKnWmuU=
+		LhTsJ88OU08E2g7dKr62RGmMWaE=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/Zscaler.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Info.plist</key>
 		<data>
-		AMfrfdGaZu7hZlbO9Uwq74hDQPk=
+		07CENL9REBNF+7SSBs6Ht8I4S+I=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -114,15 +114,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		8zIMO0y34t9z8/mvi1VIWD9BZnU=
+		Uzj/xdG5LbcvTLtzyK+cmWabzpg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		mCSceOznKZQfA85VCrMwerrCjNk=
+		H2RXUdggxqGMbBBn25vN8AgfWXk=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		8zIMO0y34t9z8/mvi1VIWD9BZnU=
+		Uzj/xdG5LbcvTLtzyK+cmWabzpg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -130,15 +130,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		0wYT27CNRvwLG9BJJryyK/w+Pjw=
+		CTHHv5QBbwrYo/3JjYu7qEzjZAU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		NEKmywFgjFYLoEQuoeoFkYKY454=
+		NVhmGa+UzUu/yAhp+p6LuwWBAU0=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		0wYT27CNRvwLG9BJJryyK/w+Pjw=
+		CTHHv5QBbwrYo/3JjYu7qEzjZAU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/module.modulemap</key>
 		<data>
@@ -146,7 +146,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Protobuf-C++_Privacy.bundle/Info.plist</key>
 		<data>
-		6Hn/HB6GbnnBBkmwBD3f5xRTVgc=
+		7BXf6X71IbH69+79NlhInKHTLgw=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Protobuf-C++_Privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -154,32 +154,24 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Zscaler</key>
 		<data>
-		/dmVp+I7leT6f5DCBl1apFEncfU=
+		WMqyRnb0k0xUszpKdQt8gOQ8MHU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/_CodeSignature/CodeResources</key>
 		<data>
-		D/D5MBi64bUmQxTSKisoeC95uzs=
+		BJNLyIdKCpnSlYboyrQH6QQp8Z4=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>ios-arm64/Zscaler.framework/Headers/Zscaler-Swift.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			vuReOxaib7mAqFcSOTQ19c7FyNo=
-			</data>
 			<key>hash2</key>
 			<data>
-			Dv+m3yv5KGoAagIlXgmSkKKUl6zKHOPLaXtz11HnSWA=
+			LOVra1qXdLizpOmT3lLebtPJKrLCuV3GZAcAEw+3tA0=
 			</data>
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Headers/Zscaler.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			CKHfguS2gysXiEUowOBG1jX0PLQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			Qa3muDSLaKVSm5JCgzf1emr6XS+O8OyiXW0YzoKPXOs=
@@ -187,10 +179,6 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Headers/ZscalerSDKAttributes.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			IeBh0PNy2efLC95vPhNcY5NvkzI=
-			</data>
 			<key>hash2</key>
 			<data>
 			zjBFF0igcQqDD85MHb3/9IQ+iqhAsB2J23j2T8EcvMY=
@@ -198,10 +186,6 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Headers/ZscalerSDKErrorCode.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			5LDrbS73z3EYrtjWD8jzpcTNxkY=
-			</data>
 			<key>hash2</key>
 			<data>
 			WXF9xJA3EMy4gGAjEg3q+avHqU/80027A9UUaIEbMKA=
@@ -209,10 +193,6 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Headers/ZscalerSDKNotification.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ILVGFTcMAr+37WXsg74qbhrYZ7E=
-			</data>
 			<key>hash2</key>
 			<data>
 			dq2AVfiN3lgwTsOCWLPkcFiNKilziHDx8e6FK+aGqZM=
@@ -220,10 +200,6 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Headers/ZscalerSDKProxyInfo.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			1wLVly/qhAOLsMMb9NpCiVEJsu8=
-			</data>
 			<key>hash2</key>
 			<data>
 			rUIJzTh26r07kehAqWAqnUVw1EvJ0palf8iL8C/N79c=
@@ -231,10 +207,6 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Headers/ZscalerSDKTunnelStatus.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			6CnMYr9zT3lDPZr0A5H236DSeXU=
-			</data>
 			<key>hash2</key>
 			<data>
 			fQtKyfkQ77mZAr/BPZLl15jrBiPgwTAJQ/9RX53x4xU=
@@ -242,10 +214,6 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Headers/ZscalerSDKTunnelType.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			TwyCvHZzu6aXh2Bz3cUkFryoSLY=
-			</data>
 			<key>hash2</key>
 			<data>
 			aHQsePyln8ERE7A4kEcqhwdS2nrAMg2afF/yrxdFsS0=
@@ -253,21 +221,13 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			fH9qBtBCGGEQnoF1puz7CdrDUQQ=
-			</data>
 			<key>hash2</key>
 			<data>
-			+IP2PC+Ie1Sq3PqGdgwLQ8F/SSDn1ZChn7llaVJntQ0=
+			Y0WotLia7IHB7nlzKtsQlyMPpmMDqrIH3OgoOOV87NQ=
 			</data>
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			gcwBsH4BgyFY4sVtNt+/xOKS3vY=
-			</data>
 			<key>hash2</key>
 			<data>
 			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
@@ -275,43 +235,27 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Q5TU0q4KRvLnfFNh4B1mcMXI+88=
-			</data>
 			<key>hash2</key>
 			<data>
-			LvlkJvTBs9XzmRAI8+bVQJ/EmcTHDu0r+Rnwl7w+ABA=
+			cIZLsmb6b9CY3HX/fU1qZkYKkkFKzIFhnyVPkuk9F8A=
 			</data>
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			jpmt2jIoI8t8FN022yZg/MaeJ50=
-			</data>
 			<key>hash2</key>
 			<data>
-			XWp3Mhxmv7MKhu/b3owmN8BY5gxtseC6TCk6E7TzL4Q=
+			HqGuLqx4fBQukv45A+e22kcs/X4SqSDwSgpeotJoAfI=
 			</data>
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Q5TU0q4KRvLnfFNh4B1mcMXI+88=
-			</data>
 			<key>hash2</key>
 			<data>
-			LvlkJvTBs9XzmRAI8+bVQJ/EmcTHDu0r+Rnwl7w+ABA=
+			cIZLsmb6b9CY3HX/fU1qZkYKkkFKzIFhnyVPkuk9F8A=
 			</data>
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			AJ4y/qd3JElCbK90SPVg0soQCUw=
-			</data>
 			<key>hash2</key>
 			<data>
 			g8jBJFafKjc5dB2r94+0/JCG4QkLLzc3TL+XwHqapqo=
@@ -319,21 +263,13 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Protobuf-C++_Privacy.bundle/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			B6yI1EvuRcpS7g8Aro/mZxtbwdk=
-			</data>
 			<key>hash2</key>
 			<data>
-			ttMT0Om+5CTxabZVEu+5LQJ4b7sFRYU0s1bTszKxxbo=
+			pdAYWpuSR9igh5gec3U785XsjN/HvmorZwFVufj4Jwc=
 			</data>
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Protobuf-C++_Privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ucg9pita0v8d353x3NuGfxweQYU=
-			</data>
 			<key>hash2</key>
 			<data>
 			Uh6274Qwdz5cAQ4YOP6d2PpdYre3bRzqjX2NqtyxROI=
@@ -341,32 +277,20 @@
 		</dict>
 		<key>ios-arm64/Zscaler.framework/Zscaler</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			7jt0oOqAWCEDZLO3ZROsu7ihRPA=
-			</data>
 			<key>hash2</key>
 			<data>
-			Yusx4Vk7a8A61SEV0caAQJp7XlXdVj9RYBYWqbJEvMU=
+			uDnb5Prlr8HEfXgeWakBhLyQ2eFrO9Y80TJn8husHRY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/Zscaler-Swift.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			wGDDHQD4vGEjQ6X5OuXjVKnWmuU=
-			</data>
 			<key>hash2</key>
 			<data>
-			H21drVZC5PxaW86vFozphE4yiRCXfWg6VNhXK/UFS2M=
+			DKTxD5IN8ShTbSp+MRyWXFevoyDvvyr9LddahZvxAZI=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/Zscaler.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			CKHfguS2gysXiEUowOBG1jX0PLQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			Qa3muDSLaKVSm5JCgzf1emr6XS+O8OyiXW0YzoKPXOs=
@@ -374,10 +298,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/ZscalerSDKAttributes.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			IeBh0PNy2efLC95vPhNcY5NvkzI=
-			</data>
 			<key>hash2</key>
 			<data>
 			zjBFF0igcQqDD85MHb3/9IQ+iqhAsB2J23j2T8EcvMY=
@@ -385,10 +305,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/ZscalerSDKErrorCode.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			5LDrbS73z3EYrtjWD8jzpcTNxkY=
-			</data>
 			<key>hash2</key>
 			<data>
 			WXF9xJA3EMy4gGAjEg3q+avHqU/80027A9UUaIEbMKA=
@@ -396,10 +312,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/ZscalerSDKNotification.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ILVGFTcMAr+37WXsg74qbhrYZ7E=
-			</data>
 			<key>hash2</key>
 			<data>
 			dq2AVfiN3lgwTsOCWLPkcFiNKilziHDx8e6FK+aGqZM=
@@ -407,10 +319,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/ZscalerSDKProxyInfo.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			1wLVly/qhAOLsMMb9NpCiVEJsu8=
-			</data>
 			<key>hash2</key>
 			<data>
 			rUIJzTh26r07kehAqWAqnUVw1EvJ0palf8iL8C/N79c=
@@ -418,10 +326,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/ZscalerSDKTunnelStatus.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			6CnMYr9zT3lDPZr0A5H236DSeXU=
-			</data>
 			<key>hash2</key>
 			<data>
 			fQtKyfkQ77mZAr/BPZLl15jrBiPgwTAJQ/9RX53x4xU=
@@ -429,10 +333,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Headers/ZscalerSDKTunnelType.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			TwyCvHZzu6aXh2Bz3cUkFryoSLY=
-			</data>
 			<key>hash2</key>
 			<data>
 			aHQsePyln8ERE7A4kEcqhwdS2nrAMg2afF/yrxdFsS0=
@@ -440,21 +340,13 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			AMfrfdGaZu7hZlbO9Uwq74hDQPk=
-			</data>
 			<key>hash2</key>
 			<data>
-			GE4aOaGQRnoHMC4Hgf2fk6NytbLSYs34tKn1rtOrwHs=
+			+f5KP9vPnxwgigf3ejm2+Mh5k9wKHUM/UIYXX+bm7Nc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			gcwBsH4BgyFY4sVtNt+/xOKS3vY=
-			</data>
 			<key>hash2</key>
 			<data>
 			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
@@ -462,43 +354,27 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			8zIMO0y34t9z8/mvi1VIWD9BZnU=
-			</data>
 			<key>hash2</key>
 			<data>
-			VNYrkD4z5LCPHvdlvTTB/4TUHP1THQbApHNR2sHI3Ug=
+			c5D6VtCNHxe+QMOmsBiy6YBXLSTN5yrvu2TCiJJ+olc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			mCSceOznKZQfA85VCrMwerrCjNk=
-			</data>
 			<key>hash2</key>
 			<data>
-			CKbZ6niuJy/ML+FLMHrzmiZ2lOh0v3xiZ9ZeswurpOM=
+			qmeBJBICPnsay2JId7ruZn/zbzrc8rkD5XKskcPqfvk=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			8zIMO0y34t9z8/mvi1VIWD9BZnU=
-			</data>
 			<key>hash2</key>
 			<data>
-			VNYrkD4z5LCPHvdlvTTB/4TUHP1THQbApHNR2sHI3Ug=
+			c5D6VtCNHxe+QMOmsBiy6YBXLSTN5yrvu2TCiJJ+olc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			gcwBsH4BgyFY4sVtNt+/xOKS3vY=
-			</data>
 			<key>hash2</key>
 			<data>
 			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
@@ -506,43 +382,27 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			0wYT27CNRvwLG9BJJryyK/w+Pjw=
-			</data>
 			<key>hash2</key>
 			<data>
-			1126qvn9gXo2ZFa7R0eUDtJgtvu4e8nq4hFI3LzN+Mk=
+			NazwMe4yxjt9IVvbpfOwXYQxR/gBYoQHZqT+6H3mLJo=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			NEKmywFgjFYLoEQuoeoFkYKY454=
-			</data>
 			<key>hash2</key>
 			<data>
-			BZe/uXj5g0UYGW0zfTiDEsOUR1CTd/UBXrxfqx3JkKc=
+			4dBKmBttraCKADolbZriqopP6zO02zfNmNiRrQdvXbg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/Zscaler.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			0wYT27CNRvwLG9BJJryyK/w+Pjw=
-			</data>
 			<key>hash2</key>
 			<data>
-			1126qvn9gXo2ZFa7R0eUDtJgtvu4e8nq4hFI3LzN+Mk=
+			NazwMe4yxjt9IVvbpfOwXYQxR/gBYoQHZqT+6H3mLJo=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			AJ4y/qd3JElCbK90SPVg0soQCUw=
-			</data>
 			<key>hash2</key>
 			<data>
 			g8jBJFafKjc5dB2r94+0/JCG4QkLLzc3TL+XwHqapqo=
@@ -550,21 +410,13 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Protobuf-C++_Privacy.bundle/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			6Hn/HB6GbnnBBkmwBD3f5xRTVgc=
-			</data>
 			<key>hash2</key>
 			<data>
-			1rgqPEREPuWcgkRahWemsmD0zBKM6ImY6YW9yf6mRu8=
+			ek2rPEP3WEGL0xPz9byzO0LGGjrb9wxn7FmO0DHU+Ac=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Protobuf-C++_Privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ucg9pita0v8d353x3NuGfxweQYU=
-			</data>
 			<key>hash2</key>
 			<data>
 			Uh6274Qwdz5cAQ4YOP6d2PpdYre3bRzqjX2NqtyxROI=
@@ -572,24 +424,16 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/Zscaler</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			/dmVp+I7leT6f5DCBl1apFEncfU=
-			</data>
 			<key>hash2</key>
 			<data>
-			8gj0vp9m8tFcfyHfq5uDvYkdq1mxjgxJNE3GNv9Qask=
+			8oFWpqG//9tdnOge9x+iu4FPthvUEcnULXy3tgS3dxE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/Zscaler.framework/_CodeSignature/CodeResources</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			D/D5MBi64bUmQxTSKisoeC95uzs=
-			</data>
 			<key>hash2</key>
 			<data>
-			RRoco+SXLZdcCgNjew12vPL95yG8mJmLgXQPx34Qv+8=
+			Kd0qB5hWF1d+4n/w6tFOxGoPs/67d2eCnV9NoB5dCnc=
 			</data>
 		</dict>
 	</dict>

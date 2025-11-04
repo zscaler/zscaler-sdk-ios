@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -enable-bare-slash-regex -module-name Zscaler
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Zscaler
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Combine
 import Foundation
 import MetricKit
@@ -27,11 +27,13 @@ import _SwiftConcurrencyShims
   @objc public init(automaticallyConfigureRequests: Swift.Bool = false, automaticallyConfigureWebviews: Swift.Bool = false, useProxyAuthentication: Swift.Bool = false, failIfDeviceCompromised: Swift.Bool = false, blockZPAConnectionsOnTunnelFailure: Swift.Bool = false, enableDebugLogsInConsole: Swift.Bool = false, logLevel: Zscaler.LogLevel = .debug)
   @objc deinit
 }
-@objc public enum LogLevel : Swift.Int {
+@objc public enum LogLevel : Swift.Int, Swift.Codable {
   case error = 0
   case info = 1
   case debug = 2
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -68,9 +70,11 @@ extension Zscaler.LogLevel : Swift.CaseIterable {
 @objc @_hasMissingDesignatedInitializers @objcMembers public class ZscalerSDK : ObjectiveC.NSObject {
   @objc public static func sharedInstance() -> Zscaler.ZscalerSDK
   @objc public func status() -> Zscaler.ZscalerSDKTunnelStatus
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public var proxyInfo: Zscaler.ZscalerSDKProxyInfo? {
     @objc get
   }
+  #endif
   @objc public var configuration: Zscaler.ZscalerSDKConfiguration {
     @objc get
     @objc set
@@ -84,7 +88,9 @@ extension Zscaler.LogLevel : Swift.CaseIterable {
   @objc public func startZeroTrustTunnel(appKey: Swift.String, deviceUdid: Swift.String, accessToken: Swift.String) async throws
   @objc public func stopTunnel() async
   @objc public func resetProxyPortAndRequireSessionRecreation()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(exportLogsToDestination:) public func exportLogs(destination: Swift.String) -> Foundation.URL?
+  #endif
   @objc public func clearLogs()
   @objc public func getClientPublicIp() -> Swift.String
   @objc deinit

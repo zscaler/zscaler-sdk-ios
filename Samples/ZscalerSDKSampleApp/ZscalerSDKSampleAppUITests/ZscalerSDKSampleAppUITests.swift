@@ -9,16 +9,15 @@ let logger = Logger()
 class ZscalerSDKSampleAppUITests: XCTestCase, WKUIDelegate, WKNavigationDelegate {
 
     var app: XCUIApplication!
-    var preLoginSwitch: XCUIElement!
-    var zeroTrustSwitch: XCUIElement!
+    var preLoginButton: XCUIElement!
+    var zeroTrustButton: XCUIElement!
+    var stopButton: XCUIElement!
     var okButton: XCUIElement!
     var tunnelConnectedLabel: XCUIElement!
     var tunnelDisconnectedLabel: XCUIElement!
     var urlTextField: XCUIElement!
     var goButton: XCUIElement!
     var webView: XCUIElement!
-    var app_key: XCUIElement!
-    var access_token: XCUIElement!
     
     var secrets: AppSecrets! = nil
 
@@ -29,113 +28,91 @@ class ZscalerSDKSampleAppUITests: XCTestCase, WKUIDelegate, WKNavigationDelegate
         app = XCUIApplication(bundleIdentifier: "com.zscaler.sdk.zscalersdk-ios.TestApp")
         app.launch()
 
-        preLoginSwitch = app.switches["pre_login_toggle"]
-        zeroTrustSwitch = app.switches["zero_trust_toggle"]
+        preLoginButton = app.buttons["Start Pre-Login Tunnel"]
+        zeroTrustButton = app.buttons["Start Zero-Trust Tunnel"]
+        stopButton = app.buttons["Stop Tunnel"]
         urlTextField = app.textFields["browser_url_text_field"]
         goButton = app.buttons["go_button"]
-        app_key = app.textFields["app_key_text_field"]
-        access_token = app.textFields["access_token_text_field"]
     }
 
     override func tearDownWithError() throws {
     }
 
     func testPreLoginTunnel() throws {
-        app_key.tap()
-        app_key.clearText()
-        app_key.typeText(secrets.appKeys.valid)
-        startTunnel(preLoginSwitch, connectedLabel: "Pre login tunnel connected", app: app)
-        stopTunnel(preLoginSwitch, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
+        enterCredentials(appKey: secrets.appKeys.valid, app: app)
+        startTunnel(preLoginButton, alertText: "Pre Login Tunnel has connected", app: app)
+        stopTunnel(stopButton, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
     }
 
     func testZeroTrustTunnel() throws {
-        app_key.tap()
-        app_key.clearText()
-        app_key.typeText(secrets.appKeys.valid)
-        access_token.tap()
-        access_token.clearText()
-        access_token.typeText(secrets.accessTokens.valid)
-        startTunnel(zeroTrustSwitch, connectedLabel: "Zero trust tunnel connected", app: app)
-        stopTunnel(zeroTrustSwitch, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
+        enterCredentials(appKey: secrets.appKeys.valid, accessToken: secrets.accessTokens.valid, app: app)
+        startTunnel(zeroTrustButton, alertText: "Zero Trust Tunnel has connected", app: app)
+        stopTunnel(stopButton, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
     }
 
     func testTunnelUpgrade() throws {
-        app_key.tap()
-        app_key.clearText()
-        app_key.typeText(secrets.appKeys.valid)
-        access_token.tap()
-        access_token.clearText()
-        access_token.typeText(secrets.accessTokens.valid)
-        startTunnel(preLoginSwitch, connectedLabel: "Pre login tunnel connected", app: app)
-        startTunnel(zeroTrustSwitch, connectedLabel: "Zero trust tunnel connected", app: app)
-        stopTunnel(zeroTrustSwitch, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
+        enterCredentials(appKey: secrets.appKeys.valid, accessToken: secrets.accessTokens.valid, app: app)
+        startTunnel(preLoginButton, alertText: "Pre Login Tunnel has connected", app: app)
+        startTunnel(zeroTrustButton, alertText: "Zero Trust Tunnel has connected", app: app)
+        stopTunnel(stopButton, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
     }
 
     func testPreLoginTunnelUrlAccess() throws {
-        app_key.tap()
-        app_key.clearText()
-        app_key.typeText(secrets.appKeys.valid)
-        startTunnel(preLoginSwitch, connectedLabel: "Pre login tunnel connected", app: app)
-        try UrlAccess(url: "https://prelogin.us.zsdk.automation.dev.zpath.net/anything?zsdk-prelogin",
-                      expectedMethod: "GET",
-                      expectedUrl: "https://prelogin.us.zsdk.automation.dev.zpath.net/anything?zsdk-prelogin",
-                      expectedArgs: "\"args\": {\n    \"zsdk-prelogin\": \"\"",
-                      app: app)
-        stopTunnel(preLoginSwitch, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
+        enterCredentials(appKey: secrets.appKeys.valid, app: app)
+        startTunnel(preLoginButton, alertText: "Pre Login Tunnel has connected", app: app)
+        try performRequest(
+            url: "https://prelogin.us.zsdk.automation.dev.zpath.net/anything?zsdk-prelogin",
+            expectedMethod: "GET",
+            expectedUrl: "https://prelogin.us.zsdk.automation.dev.zpath.net/anything?zsdk-prelogin",
+            expectedArgs: "\"args\": {\n    \"zsdk-prelogin\": \"\"",
+            app: app
+        )
+        stopTunnel(stopButton, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
         
     }
 
     func testZeroTrustTunnelUrlAccess() throws {
-        app_key.tap()
-        app_key.clearText()
-        app_key.typeText(secrets.appKeys.valid)
-        access_token.tap()
-        access_token.clearText()
-        access_token.typeText(secrets.accessTokens.valid)
-        startTunnel(zeroTrustSwitch, connectedLabel: "Zero trust tunnel connected", app: app)
-        try UrlAccess(url: "https://zerotrust.us.zsdk.automation.dev.zpath.net/anything?zsdk-zerotrust",
-                      expectedMethod: "GET",
-                      expectedUrl: "https://zerotrust.us.zsdk.automation.dev.zpath.net/anything?zsdk-zerotrust",
-                      expectedArgs: "\"args\": {\n    \"zsdk-zerotrust\": \"\"",
-                      app: app)
-        stopTunnel(zeroTrustSwitch, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
+        enterCredentials(appKey: secrets.appKeys.valid, accessToken: secrets.accessTokens.valid, app: app)
+        startTunnel(zeroTrustButton, alertText: "Zero Trust Tunnel has connected", app: app)
+        try performRequest(
+            url: "https://zerotrust.us.zsdk.automation.dev.zpath.net/anything?zsdk-zerotrust",
+            expectedMethod: "GET",
+            expectedUrl: "https://zerotrust.us.zsdk.automation.dev.zpath.net/anything?zsdk-zerotrust",
+            expectedArgs: "\"args\": {\n    \"zsdk-zerotrust\": \"\"",
+            app: app
+        )
+        stopTunnel(stopButton, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
     }
 
     func testIncorrectZDKId() throws {
-        app_key.tap()
-        app_key.clearText()
-        app_key.typeText(secrets.appKeys.notJson)
+        enterCredentials(appKey: secrets.appKeys.notJson, app: app)
 
-        startTunnel(preLoginSwitch, connectedLabel: "Failed to start tunnel with error code: The operation couldn’t be completed. (com.zscaler.sdk.error error 9002.)", app: app)
+        startTunnel(preLoginButton, alertText: "The operation couldn’t be completed. (com.zscaler.sdk.error error 9002.)", app: app)
     }
 
     func testIncorrectAuthToken() throws {
-        app_key.tap()
-        app_key.clearText()
-        app_key.typeText(secrets.appKeys.valid)
-        access_token.tap()
-        access_token.clearText()
-        access_token.typeText(secrets.accessTokens.badJson)
+        enterCredentials(appKey: secrets.appKeys.valid, accessToken: secrets.accessTokens.badJson, app: app)
 
-        startTunnel(zeroTrustSwitch, connectedLabel: "Failed to start tunnel with error code: The operation couldn’t be completed. (com.zscaler.sdk.error error 2013.)", app: app)
+        startTunnel(zeroTrustButton, alertText: "The operation couldn’t be completed. (com.zscaler.sdk.error error 2013.)", app: app)
     }
 
     func testExportLogs() throws {
-        let exportLogsButton = app.buttons["export_logs_button"]
+        let logsPageButton = app.buttons["Logs"]
+        XCTAssertTrue(logsPageButton.waitForExistence(timeout: 5), "Logs page button is not found")
+        logsPageButton.tap()
+
+        let exportLogsButton = app.buttons["Export Logs"]
         XCTAssertTrue(exportLogsButton.waitForExistence(timeout: 5), "Export Logs button not found")
         exportLogsButton.tap()
     }
     
     func testClearLogs() throws {
-        let clearLogsButton = app.buttons["clear_logs_button"]
+        let logsPageButton = app.buttons["Logs"]
+        XCTAssertTrue(logsPageButton.waitForExistence(timeout: 5), "Logs page button is not found")
+        logsPageButton.tap()
+
+        let clearLogsButton = app.buttons["Clear Logs"]
         XCTAssertTrue(clearLogsButton.waitForExistence(timeout: 5), "Clear Logs button not found")
         clearLogsButton.tap()
-        
-        let clearLogsAlert = app.alerts.firstMatch
-        XCTAssertTrue(clearLogsAlert.waitForExistence(timeout: 10))
-        
-        let okButton = clearLogsAlert.buttons["OK"]
-        XCTAssertTrue(okButton.exists)
-        okButton.tap()
     }
 }
