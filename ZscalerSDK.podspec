@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name                = 'ZscalerSDK'
-  s.version             = '3.0.1'
+  s.version             = '3.1.0'
   s.summary             = 'Zscaler SDK for Mobile Apps'
   s.description         = 'Zscaler App Security SDK'
   s.license             = { :type => 'Commercial' }

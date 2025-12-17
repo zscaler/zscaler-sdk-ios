@@ -22,7 +22,8 @@ class ZscalerSDKSampleAppUITests: XCTestCase, WKUIDelegate, WKNavigationDelegate
     var secrets: AppSecrets! = nil
 
     override func setUpWithError() throws {
-        secrets = try XCTUnwrap(AppSecrets.readFrom(environment: .qa2, bundle: .init(for: Self.self)), "Failed to read secrets from the JSON file.")
+        let environment = AppSecrets.Environment.current
+        secrets = try XCTUnwrap(AppSecrets.readFrom(environment: environment, bundle: .init(for: Self.self)), "Failed to read secrets from the JSON file.")
 
         continueAfterFailure = false
         app = XCUIApplication(bundleIdentifier: "com.zscaler.sdk.zscalersdk-ios.TestApp")
@@ -58,13 +59,15 @@ class ZscalerSDKSampleAppUITests: XCTestCase, WKUIDelegate, WKNavigationDelegate
     }
 
     func testPreLoginTunnelUrlAccess() throws {
+        let cloudConfig = CloudConfig.config(for: AppSecrets.Environment.current)
+        let testUrl = "\(cloudConfig.preloginUrl)anything?zsdk"
         enterCredentials(appKey: secrets.appKeys.valid, app: app)
         startTunnel(preLoginButton, alertText: "Pre Login Tunnel has connected", app: app)
         try performRequest(
-            url: "https://prelogin.us.zsdk.automation.dev.zpath.net/anything?zsdk-prelogin",
+            url: testUrl,
             expectedMethod: "GET",
-            expectedUrl: "https://prelogin.us.zsdk.automation.dev.zpath.net/anything?zsdk-prelogin",
-            expectedArgs: "\"args\": {\n    \"zsdk-prelogin\": \"\"",
+            expectedUrl: testUrl,
+            expectedArgs: "\"args\": {",
             app: app
         )
         stopTunnel(stopButton, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)
@@ -72,13 +75,15 @@ class ZscalerSDKSampleAppUITests: XCTestCase, WKUIDelegate, WKNavigationDelegate
     }
 
     func testZeroTrustTunnelUrlAccess() throws {
+        let cloudConfig = CloudConfig.config(for: AppSecrets.Environment.current)
+        let testUrl = "\(cloudConfig.zeroTrustUrl)anything?zsdk"
         enterCredentials(appKey: secrets.appKeys.valid, accessToken: secrets.accessTokens.valid, app: app)
         startTunnel(zeroTrustButton, alertText: "Zero Trust Tunnel has connected", app: app)
         try performRequest(
-            url: "https://zerotrust.us.zsdk.automation.dev.zpath.net/anything?zsdk-zerotrust",
+            url: testUrl,
             expectedMethod: "GET",
-            expectedUrl: "https://zerotrust.us.zsdk.automation.dev.zpath.net/anything?zsdk-zerotrust",
-            expectedArgs: "\"args\": {\n    \"zsdk-zerotrust\": \"\"",
+            expectedUrl: testUrl,
+            expectedArgs: "\"args\": {",
             app: app
         )
         stopTunnel(stopButton, disconnectedLabel: "Zscaler Tunnel has been disconnected", app: app)

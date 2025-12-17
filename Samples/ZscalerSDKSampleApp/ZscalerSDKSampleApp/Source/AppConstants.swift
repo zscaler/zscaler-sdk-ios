@@ -2,6 +2,36 @@
 import Foundation
 import UIKit
 
+struct CloudConfig {
+    let preloginUrl: String
+    let zeroTrustUrl: String
+    
+    static func config(for environment: AppSecrets.Environment) -> CloudConfig {
+        switch environment {
+        case .dev2:
+            return CloudConfig(
+                preloginUrl: "https://prelogin.dev2.zsdk.automation.dev.zpath.net/",
+                zeroTrustUrl: "https://zerotrust.dev2.zsdk.automation.dev.zpath.net/"
+            )
+        case .qa2:
+            return CloudConfig(
+                preloginUrl: "https://prelogin.us.zsdk.automation.dev.zpath.net/",
+                zeroTrustUrl: "https://zerotrust.us.zsdk.automation.dev.zpath.net/"
+            )
+        case .staging:
+            return CloudConfig(
+                preloginUrl: "https://prelogin.staging.zsdk.automation.dev.zpath.net/",
+                zeroTrustUrl: "https://zerotrust.staging.zsdk.automation.dev.zpath.net/"
+            )
+        case .prod:
+            return CloudConfig(
+                preloginUrl: "https://prelogin.prod.zsdk.automation.dev.zpath.net/",
+                zeroTrustUrl: "https://zerotrust.prod.zsdk.automation.dev.zpath.net/"
+            )
+        }
+    }
+}
+
 struct AppSecrets: Codable {
     let appKeys: AppKeyConstants
     let accessTokens: AccessTokenConstants
@@ -34,8 +64,13 @@ struct AppSecrets: Codable {
     }
     
     enum Environment: String {
+        case dev2 = "secrets_dev2"
         case qa2 = "secrets_qa2"
+        case staging = "secrets_staging"
+        case prod = "secrets_prod"
         
+        // Change this to the desired environment: dev2, qa2, staging, or prod
+        static let current: Environment = .qa2
     }
 }
 
@@ -57,14 +92,20 @@ extension AppSecrets {
     
     static let shared = AppConstants()
     
-    let secrets: AppSecrets? = AppSecrets.readFrom(environment: .qa2, bundle: .main)
+    let secrets: AppSecrets?
+    let environment: AppSecrets.Environment
+    let cloudConfig: CloudConfig
     private var uuid: UUID?
     
     // Private initializer to enforce singleton pattern
-    private init() {}
+    private init() {
+        self.environment = AppSecrets.Environment.current
+        self.secrets = AppSecrets.readFrom(environment: environment, bundle: .main)
+        self.cloudConfig = CloudConfig.config(for: environment)
+    }
     
     func validUrl() -> String? {
-        return "https://prelogin.us.zsdk.automation.dev.zpath.net/anything?zsdk-prelogin"
+        return cloudConfig.preloginUrl
     }
     
     func appKey() -> String? {

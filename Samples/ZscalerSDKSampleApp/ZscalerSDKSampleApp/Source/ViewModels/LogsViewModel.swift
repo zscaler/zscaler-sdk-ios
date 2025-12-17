@@ -33,7 +33,7 @@ class LogsViewModel: ObservableObject {
             let content = try getLogFileContent()
             let lines = content.split(whereSeparator: \.isNewline)
             
-            self.eventEntries = lines.map { line in
+            self.eventEntries = lines.reversed().map { line in
                 return EventEntry(message: String(line))
             }
         } catch {
@@ -60,7 +60,9 @@ class LogsViewModel: ObservableObject {
 
     func clearLogs() {
         self.inProgress = true
+        defer { self.inProgress = false }
         
+        // Clear SDK logs and events
         ZscalerSDK.sharedInstance().clearLogs()
 
         loadLogs()

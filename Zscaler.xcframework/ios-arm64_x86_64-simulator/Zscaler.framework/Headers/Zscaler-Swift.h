@@ -393,7 +393,7 @@ SWIFT_CLASS("_TtC7Zscaler10ZscalerSDK")
 /// note:
 /// This function ensures that the destination string always starts with the “file://” prefix, which is likely a requirement for the log export functionality to work correctly.
 - (NSURL * _Nullable)exportLogsToDestination:(NSString * _Nonnull)destination SWIFT_WARN_UNUSED_RESULT;
-/// Clear all logs.
+/// Clear all logs and events.
 - (void)clearLogs;
 /// Gets Client Public IP - This should be only called after the tunnel is started.
 - (NSString * _Nonnull)getClientPublicIp SWIFT_WARN_UNUSED_RESULT;
@@ -847,7 +847,7 @@ SWIFT_CLASS("_TtC7Zscaler10ZscalerSDK")
 /// note:
 /// This function ensures that the destination string always starts with the “file://” prefix, which is likely a requirement for the log export functionality to work correctly.
 - (NSURL * _Nullable)exportLogsToDestination:(NSString * _Nonnull)destination SWIFT_WARN_UNUSED_RESULT;
-/// Clear all logs.
+/// Clear all logs and events.
 - (void)clearLogs;
 /// Gets Client Public IP - This should be only called after the tunnel is started.
 - (NSString * _Nonnull)getClientPublicIp SWIFT_WARN_UNUSED_RESULT;
