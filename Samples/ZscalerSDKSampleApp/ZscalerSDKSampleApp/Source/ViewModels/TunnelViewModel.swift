@@ -21,6 +21,7 @@ import Zscaler
     // Status properties
     @Published var tunnelConnectionState: String = ""
     @Published var tunnelType: String = ""
+    @Published var clientPublicIp: String = ""
 
     private var backgroundTask = UIBackgroundTaskIdentifier.invalid
 
@@ -86,6 +87,7 @@ import Zscaler
     
     func stopTunnel() async {
         await ZscalerSDK.sharedInstance().stopTunnel()
+        clientPublicIp = ""
         tunnelStopped()
     }
     
@@ -122,9 +124,15 @@ import Zscaler
         self.tunnelType = status.tunnelType.description
     }
     
+    private func updateClientPublicIp() {
+        let ip = ZscalerSDK.sharedInstance().getClientPublicIp()
+        self.clientPublicIp = ip
+    }
+
     private func handleNotification(name: String, message: String?) {
         notifications.insert(NotificationEntry(timestamp: Date(), name: name, message: message), at: 0)
         updateStatus()
+        updateClientPublicIp()
     }
     
     private func tunnelConnected(tunnelType: String) {

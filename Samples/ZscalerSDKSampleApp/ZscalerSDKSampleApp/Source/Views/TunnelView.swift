@@ -51,6 +51,7 @@ struct TunnelView: View {
                 Section(header: Text("Status")) {
                     Text("State: \(viewModel.tunnelConnectionState)")
                     Text("Type: \(viewModel.tunnelType.description)")
+                    Text("Public IP: \(viewModel.clientPublicIp)")
                 }
                 
                 Section(header: Text("Notifications")) {
