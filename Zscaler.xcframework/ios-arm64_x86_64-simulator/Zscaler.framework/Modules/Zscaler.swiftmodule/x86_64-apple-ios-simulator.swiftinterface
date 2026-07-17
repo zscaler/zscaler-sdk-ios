@@ -24,7 +24,7 @@ import _SwiftConcurrencyShims
   @objc final public let blockZPAConnectionsOnTunnelFailure: Swift.Bool
   @objc final public let enableDebugLogsInConsole: Swift.Bool
   @objc final public let logLevel: Zscaler.LogLevel
-  @objc public init(automaticallyConfigureRequests: Swift.Bool = false, automaticallyConfigureWebviews: Swift.Bool = false, useProxyAuthentication: Swift.Bool = false, failIfDeviceCompromised: Swift.Bool = false, blockZPAConnectionsOnTunnelFailure: Swift.Bool = false, enableDebugLogsInConsole: Swift.Bool = false, logLevel: Zscaler.LogLevel = .debug)
+  @objc public init(automaticallyConfigureRequests: Swift.Bool = false, automaticallyConfigureWebviews: Swift.Bool = false, useProxyAuthentication: Swift.Bool = true, failIfDeviceCompromised: Swift.Bool = false, blockZPAConnectionsOnTunnelFailure: Swift.Bool = false, enableDebugLogsInConsole: Swift.Bool = false, logLevel: Zscaler.LogLevel = .debug)
   @objc deinit
 }
 @objc public enum LogLevel : Swift.Int, Swift.Codable {
